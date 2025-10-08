@@ -2,30 +2,158 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Aya Soukii — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Poppins', sans-serif; background:#f8fafc; color:#0f172a; margin:0; padding:24px;}
-    .container { max-width:900px; margin:0 auto; }
-    header { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:32px;}
-    .hero { background:white; padding:28px; border-radius:12px; box-shadow:0 6px 18px rgba(2,6,23,0.06); display:flex; gap:20px; align-items:center; transition: transform 0.3s ease;}
-    .hero:hover { transform: scale(1.02); }
-    .avatar { width:140px; height:140px; border-radius:12px; background:linear-gradient(135deg,#eef2ff,#fff); display:flex; align-items:center; justify-content:center; overflow:hidden;}
-    .avatar img { width:100%; height:100%; object-fit:cover; }
-    h1{margin:0;font-size:28px; font-weight:600; }
-    p.lead { color:#475569; margin-top:8px; font-size:16px; line-height:1.5; }
-    section { margin-top:40px; }
-    .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:20px; }
-    .card { background:white; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(2,6,23,0.04); transition: transform 0.3s ease;}
-    .card:hover { transform: scale(1.05); }
-    footer { text-align:center; color:#64748b; margin-top:40px; font-size:14px;}
-    a.button { display:inline-block; padding:10px 16px; border-radius:8px; background:#4f46e5; color:white; text-decoration:none; font-weight:500; }
-    a.button:hover { background-color:#3730a3; }
-    .cta { display:flex; gap:12px; margin-top:20px;}
-    @media(max-width:720px){ 
-      .grid{grid-template-columns:1fr;} 
-      header{flex-direction:column;align-items:flex-start;} 
-      .hero{flex-direction:column;align-items:flex-start;} 
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f7fafc;
+      color: #1a202c;
+      margin: 0;
+      padding: 24px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 32px;
+      margin: 0;
+    }
+
+    .hero {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(2, 6, 23, 0.1);
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+
+    .hero:hover {
+      transform: scale(1.03);
+    }
+
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #eef2ff, #ffffff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    p.lead {
+      color: #475569;
+      font-size: 16px;
+      font-weight: 400;
+      margin-top: 8px;
+    }
+
+    .cta a {
+      display: inline-block;
+      padding: 12px 20px;
+      background-color: #4f46e5;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta a:hover {
+      background-color: #3730a3;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(2, 6, 23, 0.04);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      color: #64748b;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 8px;
+      background: #4f46e5;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 20px;
+    }
+
+    a.button:hover {
+      background-color: #3730a3;
+    }
+
+    @media(max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cta a {
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
@@ -34,19 +162,19 @@
     <header>
       <div>
         <h1>Aya Soukii</h1>
-        <div style="color:#64748b">Élève ingénieure — Électronique Embarquée & Télécoms (ESPRIT)</div>
+        <div style="color:#64748b;">Élève ingénieure — Électronique Embarquée & Télécoms (ESPRIT)</div>
       </div>
-      <div style="text-align:right">
+      <div style="text-align:right;">
         <a class="button" href="CV_Aya.pdf" download>📄 Télécharger mon CV</a>
-        <div style="margin-top:8px"><a href="mailto:aya.souki700@gmail.com">aya.souki700@gmail.com</a></div>
+        <div style="margin-top:8px;"><a href="mailto:aya.souki700@gmail.com">aya.souki700@gmail.com</a></div>
       </div>
     </header>
 
-    <div class="hero" style="margin-top:18px;">
-      <div style="flex:1">
+    <div class="hero">
+      <div style="flex:1;">
         <p class="lead">Élève ingénieure en 5ᵉ année de Génie Électrique à l’ESPRIT, spécialisée en Électronique Embarquée et Télécommunications. Passionnée par l’IoT, l’intelligence artificielle et les systèmes embarqués, j’ai mené des projets mêlant électronique, programmation et cloud. Rigoureuse, créative et déterminée.</p>
         <div class="cta">
-          <a class="button" href="#projects">Voir mes projets</a>
+          <a href="#projects">Voir mes projets</a>
           <a href="https://www.linkedin.com/in/aya-souki-022b32219/">LinkedIn</a>
           <a href="https://github.com/Ayasoukii">GitHub</a>
         </div>
@@ -60,22 +188,22 @@
       <h3>Projets</h3>
       <div class="grid">
         <div class="card">
-          <img src="Aeroqium.jpg" alt="AEROQIUM — Serre connectée aéroponique" style="width:100%; border-radius:8px; margin-bottom:10px;">
+          <img src="Aeroqium.jpg" alt="AEROQIUM — Serre connectée aéroponique">
           <h4>AEROQIUM — Serre connectée aéroponique</h4>
           <p>Conception et mise en place d’une serre automatisée avec un système aéroponique et un aquarium intégré. ESP32, Flutter, Firebase, capteurs (pH, EC, DHT22).</p>
         </div>
         <div class="card">
-          <img src="plantes.jpg" alt="Détection des maladies des plantes" style="width:100%; border-radius:8px; margin-bottom:10px;">
+          <img src="plantes.jpg" alt="Détection des maladies des plantes">
           <h4>Détection et identification des maladies des plantes (Deep Learning)</h4>
           <p>Modèle AI pour détecter automatiquement les maladies des plantes avec TensorFlow/Keras. Dataset: Kaggle.</p>
         </div>
         <div class="card">
-          <img src="domotique.jpg" alt="Système domotique basé sur Node.js" style="width:100%; border-radius:8px; margin-bottom:10px;">
+          <img src="domotique.jpg" alt="Système domotique basé sur Node.js">
           <h4>Système domotique basé sur Node.js</h4>
           <p>Système pour la gestion de la maison intelligente via MQTT, Express.js, Node.js, Electron.js, Node-RED, MongoDB.</p>
         </div>
         <div class="card">
-          <img src="RFID.jpg" alt="Système RFID pour gestion d'inventaire" style="width:100%; border-radius:8px; margin-bottom:10px;">
+          <img src="RFID.jpg" alt="Système RFID pour gestion d'inventaire">
           <h4>Système de gestion d'inventaire intelligent</h4>
           <p>Application IoT utilisant RFID pour la gestion des stocks en temps réel avec ESP32, Node.js.</p>
         </div>
@@ -112,3 +240,4 @@
   </div>
 </body>
 </html>
+
