@@ -5,20 +5,28 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Aya Soukii — Portfolio</title>
   <style>
-    body { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:#f8fafc; color:#0f172a; margin:0; padding:24px;}
+    body { font-family: 'Poppins', sans-serif; background:#f8fafc; color:#0f172a; margin:0; padding:24px;}
     .container { max-width:900px; margin:0 auto; }
-    header { display:flex; align-items:center; justify-content:space-between; gap:16px;}
-    .hero { background:white; padding:28px; border-radius:12px; box-shadow:0 6px 18px rgba(2,6,23,0.06); display:flex; gap:20px; align-items:center; }
+    header { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:32px;}
+    .hero { background:white; padding:28px; border-radius:12px; box-shadow:0 6px 18px rgba(2,6,23,0.06); display:flex; gap:20px; align-items:center; transition: transform 0.3s ease;}
+    .hero:hover { transform: scale(1.02); }
     .avatar { width:140px; height:140px; border-radius:12px; background:linear-gradient(135deg,#eef2ff,#fff); display:flex; align-items:center; justify-content:center; overflow:hidden;}
     .avatar img { width:100%; height:100%; object-fit:cover; }
-    h1{margin:0;font-size:24px;}
-    p.lead { color:#475569; margin-top:8px; }
-    section { margin-top:20px; }
-    .grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-    .card { background:white; padding:16px; border-radius:10px; box-shadow:0 4px 12px rgba(2,6,23,0.04); }
-    footer { text-align:center; color:#64748b; margin-top:28px; font-size:13px;}
-    a.button { display:inline-block; padding:8px 12px; border-radius:8px; background:#4f46e5; color:white; text-decoration:none; }
-    @media(max-width:720px){ .grid{grid-template-columns:1fr} header{flex-direction:column;align-items:flex-start} .hero{flex-direction:column;align-items:flex-start} }
+    h1{margin:0;font-size:28px; font-weight:600; }
+    p.lead { color:#475569; margin-top:8px; font-size:16px; line-height:1.5; }
+    section { margin-top:40px; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:20px; }
+    .card { background:white; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(2,6,23,0.04); transition: transform 0.3s ease;}
+    .card:hover { transform: scale(1.05); }
+    footer { text-align:center; color:#64748b; margin-top:40px; font-size:14px;}
+    a.button { display:inline-block; padding:10px 16px; border-radius:8px; background:#4f46e5; color:white; text-decoration:none; font-weight:500; }
+    a.button:hover { background-color:#3730a3; }
+    .cta { display:flex; gap:12px; margin-top:20px;}
+    @media(max-width:720px){ 
+      .grid{grid-template-columns:1fr;} 
+      header{flex-direction:column;align-items:flex-start;} 
+      .hero{flex-direction:column;align-items:flex-start;} 
+    }
   </style>
 </head>
 <body>
@@ -37,10 +45,10 @@
     <div class="hero" style="margin-top:18px;">
       <div style="flex:1">
         <p class="lead">Élève ingénieure en 5ᵉ année de Génie Électrique à l’ESPRIT, spécialisée en Électronique Embarquée et Télécommunications. Passionnée par l’IoT, l’intelligence artificielle et les systèmes embarqués, j’ai mené des projets mêlant électronique, programmation et cloud. Rigoureuse, créative et déterminée.</p>
-        <div style="margin-top:12px">
+        <div class="cta">
           <a class="button" href="#projects">Voir mes projets</a>
-          <a style="margin-left:8px" href="https://www.linkedin.com/in/aya-souki-022b32219/">LinkedIn</a>
-          <a style="margin-left:8px" href="https://github.com/Ayasoukii">GitHub</a>
+          <a href="https://www.linkedin.com/in/aya-souki-022b32219/">LinkedIn</a>
+          <a href="https://github.com/Ayasoukii">GitHub</a>
         </div>
       </div>
       <div class="avatar">
@@ -52,34 +60,24 @@
       <h3>Projets</h3>
       <div class="grid">
         <div class="card">
-          <img src="Aeroqium.jpg" alt="AEROQIUM" style="width:100%; border-radius:8px; margin-bottom:10px;">
+          <img src="Aeroqium.jpg" alt="AEROQIUM — Serre connectée aéroponique" style="width:100%; border-radius:8px; margin-bottom:10px;">
           <h4>AEROQIUM — Serre connectée aéroponique</h4>
           <p>Conception et mise en place d’une serre automatisée avec un système aéroponique et un aquarium intégré. ESP32, Flutter, Firebase, capteurs (pH, EC, DHT22).</p>
         </div>
         <div class="card">
-          <img src="plantes.jpg" alt="plantes" style="width:100%; border-radius:8px; margin-bottom:10px;">
+          <img src="plantes.jpg" alt="Détection des maladies des plantes" style="width:100%; border-radius:8px; margin-bottom:10px;">
           <h4>Détection et identification des maladies des plantes (Deep Learning)</h4>
-          <p>Développement d’un modèle d’intelligence artificielle pour détecter automatiquement les maladies des plantes à partir d’images en utilisant des techniques de traitement d’image et d’apprentissage profond. Classification d'images avec TensorFlow/Keras. Dataset: Kaggle.</p>
+          <p>Modèle AI pour détecter automatiquement les maladies des plantes avec TensorFlow/Keras. Dataset: Kaggle.</p>
         </div>
         <div class="card">
-          <img src="domotique.jpg" alt="domotique" style="width:100%; border-radius:8px; margin-bottom:10px;">
+          <img src="domotique.jpg" alt="Système domotique basé sur Node.js" style="width:100%; border-radius:8px; margin-bottom:10px;">
           <h4>Système domotique basé sur Node.js</h4>
-          <p>Système complet pour la maison intelligente avec gestion centralisée des capteurs, actionneurs et alarmes. Broker MQTT (Aedes), Express.js, Node.js, Dashboard web (Electron.js / Node-RED), MongoDB.</p>
+          <p>Système pour la gestion de la maison intelligente via MQTT, Express.js, Node.js, Electron.js, Node-RED, MongoDB.</p>
         </div>
         <div class="card">
-          <img src="RFID.jpg" alt="RFID" style="width:100%; border-radius:8px; margin-bottom:10px;">
+          <img src="RFID.jpg" alt="Système RFID pour gestion d'inventaire" style="width:100%; border-radius:8px; margin-bottom:10px;">
           <h4>Système de gestion d'inventaire intelligent</h4>
-          <p>Création d’une application IoT pour le suivi et la gestion en temps réel des stocks en utilisant des modules RFID pour l’automatisation de la lecture et mise à jour des inventaires. ESP32 + RFID, Node.js — suivi des produits & base de données.</p>
-        </div>
-        <div class="card">
-          <img src="panneaux_cercles_dominant_color.png" alt="panneaux" style="width:100%; border-radius:8px; margin-bottom:10px;">
-          <h4>Système embarqué de détection de panneaux de signalisation routière</h4>
-          <p>Développement d’un système embarqué pour identifier les panneaux routiers à l’aide de caméras et de traitement d’image. Raspberry Pi, OpenCV, Deep Learning.</p>
-        </div>
-        <div class="card">
-          <img src="Scanner3D.jpg" alt="scan" style="width:100%; border-radius:8px; margin-bottom:10px;">
-          <h4>Scanner 3D</h4>
-          <p>Conception et programmation d’un scanner 3D pour modéliser des objets physiques en modèles numériques précis. Arduino, OpenCV, logiciel de reconstruction 3D.</p>
+          <p>Application IoT utilisant RFID pour la gestion des stocks en temps réel avec ESP32, Node.js.</p>
         </div>
       </div>
     </section>
