@@ -16,7 +16,7 @@
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
@@ -24,104 +24,85 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
       gap: 16px;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
       position: sticky;
       top: 0;
       background: white;
       padding: 16px;
       z-index: 10;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
     }
 
     h1 {
       font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      font-size: 32px;
+      font-weight: 700;
+      font-size: 28px;
       margin: 0;
       color: #4f46e5;
     }
 
-    .hero {
-      background: #ffffff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(2, 6, 23, 0.1);
+    /* ===== HERO SECTION ===== */
+    .heroPro {
+      background: linear-gradient(135deg, #eef2ff 0%, #e9d5ff 35%, #dbeafe 100%);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 8px 28px rgba(2, 6, 23, .12);
       display: flex;
-      gap: 20px;
+      gap: 28px;
       align-items: center;
-      transition: transform 0.3s ease;
+      margin: 20px 0 36px;
     }
 
-    .hero:hover {
-      transform: scale(1.03);
-    }
+    .heroLeft { flex: 1; min-width: 0; }
+    .heroTitle { font-family: Poppins, system-ui; font-weight: 700; font-size: 32px; margin: 0 0 6px; color: #111827; }
+    .heroSub { color: #374151; margin: 0 0 14px; font-size: 17px; }
 
-    .avatar {
-      width: 150px;
-      height: 150px;
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 18px; }
+    .tag { background: #ffffffcc; border: 1px solid #ffffff; color: #1f2937; padding: 6px 10px; border-radius: 999px; font-size: 13px; font-weight: 600; backdrop-filter: saturate(1.2) blur(2px); }
+
+    .ctaRow { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btnPrimary { background: #4f46e5; color: #fff; padding: 10px 14px; border-radius: 10px; text-decoration: none; font-weight: 600; }
+    .btnGhost { background: #ffffff; color: #4f46e5; padding: 10px 14px; border-radius: 10px; text-decoration: none; font-weight: 600; border: 1px solid #c7d2fe; }
+    .btnPrimary:hover { background: #3730a3; }
+    .btnGhost:hover { background: #eef2ff; }
+
+    .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 18px; }
+    .stat { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 10px 12px; text-align: center; }
+    .stat strong { display: block; font-size: 20px; color: #111827; }
+    .stat span { display: block; font-size: 12px; color: #6b7280; }
+
+    .heroPhoto {
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       overflow: hidden;
-      background: linear-gradient(135deg, #eef2ff, #ffffff);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      box-shadow: 0 12px 30px rgba(79, 70, 229, .35);
+      border: 4px solid #fff;
+      flex: 0 0 auto;
+    }
+    .heroPhoto img { width: 100%; height: 100%; object-fit: cover; }
+
+    @media(max-width: 780px) {
+      .heroPro { flex-direction: column; align-items: flex-start; }
+      .stats { grid-template-columns: repeat(3, 1fr); }
     }
 
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    p.lead {
-      color: #475569;
-      font-size: 16px;
-      font-weight: 400;
-      margin-top: 8px;
-    }
-
-    .cta a {
-      display: inline-block;
-      padding: 12px 20px;
-      background-color: #4f46e5;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 500;
-      transition: background-color 0.3s ease;
-    }
-
-    .cta a:hover {
-      background-color: #3730a3;
-    }
-
-    .intro {
-      background: #ffffff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(2, 6, 23, 0.1);
-      margin-bottom: 40px;
-    }
-
-    .intro h2 {
+    /* ===== PROJECTS / COMPETENCES / CERTIFICATIONS ===== */
+    h3 {
       font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      font-size: 24px;
       color: #4f46e5;
-    }
-
-    .intro p {
-      font-size: 16px;
-      line-height: 1.6;
-      color: #475569;
+      font-weight: 600;
+      margin-top: 40px;
     }
 
     .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
-      margin-top: 40px;
+      margin-top: 20px;
     }
 
     .card {
@@ -166,28 +147,13 @@
     }
 
     @media(max-width: 768px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .hero {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .cta a {
-        margin-top: 10px;
-      }
+      .grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <div class="container">
+
     <header>
       <div>
         <h1>Aya Soukii</h1>
@@ -199,31 +165,39 @@
       </div>
     </header>
 
-    <!-- Section d'introduction -->
-    <section class="intro">
-      <h2>Bienvenue sur mon Portfolio</h2>
-      <p>
-        Je suis une élève ingénieure passionnée par l'innovation technologique. Actuellement en 5ᵉ année de Génie Électrique à l'ESPRIT, spécialisée en Électronique Embarquée et Télécommunications, je travaille sur des projets allant de l'IoT à l'intelligence artificielle, en passant par la conception de systèmes embarqués. 
-      </p>
-      <p>
-        Ce portfolio reflète mes compétences et mon engagement dans des projets innovants. Vous y découvrirez une sélection de mes réalisations dans les domaines de l'électronique, du cloud et de l'intelligence artificielle.
-      </p>
-    </section>
+    <!-- ===== HERO ===== -->
+    <section class="heroPro" aria-label="Présentation">
+      <div class="heroLeft">
+        <h1 class="heroTitle">Aya Soukii</h1>
+        <p class="heroSub">Élève ingénieure en Électronique Embarquée & Télécoms (ESPRIT). J’aime concevoir des systèmes IoT fiables, mêlant embarqué, IA et cloud.</p>
 
-    <div class="hero">
-      <div style="flex:1;">
-        <p class="lead">Élève ingénieure en 5ᵉ année de Génie Électrique à l’ESPRIT, spécialisée en Électronique Embarquée et Télécommunications. Passionnée par l’IoT, l’intelligence artificielle et les systèmes embarqués, j’ai mené des projets mêlant électronique, programmation et cloud. Rigoureuse, créative et déterminée.</p>
-        <div class="cta">
-          <a href="#projects">Voir mes projets</a>
-          <a href="https://www.linkedin.com/in/aya-souki-022b32219/">LinkedIn</a>
-          <a href="https://github.com/Ayasoukii">GitHub</a>
+        <div class="tags">
+          <span class="tag">IoT & ESP32</span>
+          <span class="tag">Raspberry&nbsp;Pi</span>
+          <span class="tag">OpenCV & Deep&nbsp;Learning</span>
+          <span class="tag">MQTT / Node.js</span>
+          <span class="tag">Firebase & Cloud</span>
+        </div>
+
+        <div class="ctaRow">
+          <a class="btnPrimary" href="#projects">Voir mes projets</a>
+          <a class="btnGhost" href="CV_Aya.pdf" download>📄 Télécharger mon CV</a>
+          <a class="btnGhost" href="mailto:aya.souki700@gmail.com">✉️ Me contacter</a>
+        </div>
+
+        <div class="stats" role="list" aria-label="Points clés">
+          <div class="stat" role="listitem"><strong>6+</strong><span>projets concrets</span></div>
+          <div class="stat" role="listitem"><strong>5+</strong><span>certifications</span></div>
+          <div class="stat" role="listitem"><strong>3</strong><span>stages réalisés</span></div>
         </div>
       </div>
-      <div class="avatar">
-        <img src="photo_aya.jpg" alt="Photo professionnelle" />
-      </div>
-    </div>
 
+      <figure class="heroPhoto">
+        <img src="photo_aya.jpg" alt="Portrait professionnel d’Aya Soukii">
+      </figure>
+    </section>
+
+    <!-- ===== PROJETS ===== -->
     <section id="projects">
       <h3>Projets</h3>
       <div class="grid">
@@ -260,6 +234,7 @@
       </div>
     </section>
 
+    <!-- ===== COMPETENCES ===== -->
     <section id="skills">
       <h3>Compétences</h3>
       <div class="grid">
@@ -278,67 +253,55 @@
       </div>
     </section>
 
-    <!-- Section des certifications -->
+    <!-- ===== CERTIFICATIONS ===== -->
     <section id="certifications">
       <h3>Certifications & Formations</h3>
       <div class="grid">
-        <!-- Formation Siemens -->
         <div class="card">
-          <img src="siemens_certificate.jpg" alt="Formation Siemens" style="width:100%; border-radius:8px; margin-bottom:10px;">
+          <img src="siemens_certificate.jpg" alt="Formation Siemens">
           <h4>Formation Siemens - Industrie 4.0</h4>
           <p><strong>Organisme :</strong> Siemens</p>
           <p>Formation sur les technologies de l'Industrie 4.0, incluant l'automatisation avancée, l'intégration des systèmes et la gestion des processus industriels intelligents.</p>
-          <a class="button" href="https://www.siemens.com/industry4.0/certificate" target="_blank">Voir le certificat</a>
         </div>
 
-        <!-- Certification ROS -->
         <div class="card">
-          <img src="ros_certificate.jpg" alt="Certification ROS" style="width:100%; border-radius:8px; margin-bottom:10px;">
+          <img src="ros_certificate.jpg" alt="Certification ROS">
           <h4>Foundation Code for ROS</h4>
           <p><strong>Organisme :</strong> The Construct</p>
           <p>Formation sur le développement de logiciels pour la robotique avec ROS, y compris Linux et Python pour la robotique.</p>
-          <a class="button" href="https://app.theconstruct.ai/verify/RIAC1E96C1469E9" target="_blank">Voir le certificat</a>
         </div>
 
-        <!-- Certification Deep Learning -->
         <div class="card">
-          <img src="deep_learning_certificate.jpg" alt="Certification Deep Learning" style="width:100%; border-radius:8px; margin-bottom:10px;">
+          <img src="deep_learning_certificate.jpg" alt="Certification Deep Learning">
           <h4>Getting Started with Deep Learning</h4>
           <p><strong>Organisme :</strong> NVIDIA</p>
           <p>Formation complète sur les bases de l’apprentissage profond avec TensorFlow, CNN et RNN pour la classification d'images et la reconnaissance de motifs.</p>
-          <a class="button" href="https://learn.nvidia.com/certificates?id=Pi1RIXWzTMCXKrzAtHalVw" target="_blank">Voir le certificat</a>
         </div>
 
-        <!-- Certification AI pour Maintenance prédictive -->
         <div class="card">
-          <img src="ai_predictive_maintenance.jpg" alt="Certification AI pour Maintenance Prédictive" style="width:100%; border-radius:8px; margin-bottom:10px;">
+          <img src="ai_predictive_maintenance.jpg" alt="Certification AI Maintenance prédictive">
           <h4>Applications of AI for Predictive Maintenance</h4>
           <p><strong>Organisme :</strong> NVIDIA</p>
-          <p>Formation sur l'application de l'IA pour la maintenance prédictive des machines et des équipements industriels, avec des projets pratiques d'analyse de données en temps réel.</p>
-          <a class="button" href="https://learn.nvidia.com/certificates?id=UgQ_0U4ATcelxtlcVUgGnA" target="_blank">Voir le certificat</a>
+          <p>Formation sur l'application de l'IA pour la maintenance prédictive des machines et équipements industriels, avec des projets pratiques d'analyse de données.</p>
         </div>
 
-        <!-- Certification Linux Essentials -->
         <div class="card">
-          <img src="linux_essentials_certificate.jpg" alt="Certification Linux Essentials" style="width:100%; border-radius:8px; margin-bottom:10px;">
+          <img src="linux_essentials_certificate.jpg" alt="Certification Linux Essentials">
           <h4>Linux Essentials</h4>
           <p><strong>Organisme :</strong> Cisco Networking Academy</p>
-          <p>Formation certifiée sur les bases du système d'exploitation Linux, avec des compétences sur la ligne de commande et la sécurité des systèmes Linux.</p>
-          <a class="button" href="https://www.lpi.org/certification/linux-essentials" target="_blank">Voir le certificat</a>
+          <p>Formation certifiée sur les bases du système d'exploitation Linux, la ligne de commande et la sécurité des systèmes Linux.</p>
         </div>
 
-        <!-- Certification Industrie 4.0 -->
         <div class="card">
-          <img src="industry_4_certificate.jpg" alt="Certification Industrie 4.0" style="width:100%; border-radius:8px; margin-bottom:10px;">
+          <img src="industry_4_certificate.jpg" alt="Certification Industrie 4.0">
           <h4>Les Fondamentaux de l'Industrie 4.0</h4>
           <p><strong>Organisme :</strong> Novation City</p>
-          <p>Formation sur les technologies et processus industriels associés à l'Industrie 4.0, y compris l'automatisation, la robotique, et les systèmes de production intelligents.</p>
-          <a class="button" href="https://www.novationcity.com/certification-industry-4" target="_blank">Voir le certificat</a>
+          <p>Formation sur les technologies et processus industriels de l'Industrie 4.0, y compris l'automatisation, la robotique et les systèmes intelligents.</p>
         </div>
-
       </div>
     </section>
 
+    <!-- ===== CONTACT ===== -->
     <section id="contact">
       <h3>Contact</h3>
       <p>Email: <a href="mailto:aya.souki700@gmail.com">aya.souki700@gmail.com</a> • Tél: (+216) 28 162 710</p>
@@ -350,4 +313,4 @@
     </footer>
   </div>
 </body>
-                                                                                                                               </html>
+</html>
