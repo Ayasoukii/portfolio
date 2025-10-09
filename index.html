@@ -20,30 +20,6 @@
       margin: 0 auto;
     }
 
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 24px;
-      position: sticky;
-      top: 0;
-      background: white;
-      padding: 16px;
-      z-index: 10;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-    }
-
-    h1 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 28px;
-      margin: 0;
-      color: #4f46e5;
-    }
-
     /* ===== HERO SECTION ===== */
     .heroPro {
       background: linear-gradient(135deg, #eef2ff 0%, #e9d5ff 35%, #dbeafe 100%);
@@ -53,7 +29,7 @@
       display: flex;
       gap: 28px;
       align-items: center;
-      margin: 20px 0 36px;
+      margin: 0 0 36px;
     }
 
     .heroLeft { flex: 1; min-width: 0; }
@@ -90,7 +66,7 @@
       .stats { grid-template-columns: repeat(3, 1fr); }
     }
 
-    /* ===== PROJECTS / COMPETENCES / CERTIFICATIONS ===== */
+    /* ===== OTHER SECTIONS ===== */
     h3 {
       font-family: 'Poppins', sans-serif;
       color: #4f46e5;
@@ -154,17 +130,6 @@
 <body>
   <div class="container">
 
-    <header>
-      <div>
-        <h1>Aya Soukii</h1>
-        <div style="color:#64748b;">Élève ingénieure — Électronique Embarquée & Télécoms (ESPRIT)</div>
-      </div>
-      <div style="text-align:right;">
-        <a class="button" href="CV_Aya.pdf" download>📄 Télécharger mon CV</a>
-        <div style="margin-top:8px;"><a href="mailto:aya.souki700@gmail.com">aya.souki700@gmail.com</a></div>
-      </div>
-    </header>
-
     <!-- ===== HERO ===== -->
     <section class="heroPro" aria-label="Présentation">
       <div class="heroLeft">
@@ -181,8 +146,8 @@
 
         <div class="ctaRow">
           <a class="btnPrimary" href="#projects">Voir mes projets</a>
-          <a class="btnGhost" href="CV_Aya.pdf" download>📄 Télécharger mon CV</a>
           <a class="btnGhost" href="mailto:aya.souki700@gmail.com">✉️ Me contacter</a>
+          <a class="btnGhost" href="https://www.linkedin.com/in/aya-souki-022b32219/">LinkedIn</a>
         </div>
 
         <div class="stats" role="list" aria-label="Points clés">
@@ -263,35 +228,30 @@
           <p><strong>Organisme :</strong> Siemens</p>
           <p>Formation sur les technologies de l'Industrie 4.0, incluant l'automatisation avancée, l'intégration des systèmes et la gestion des processus industriels intelligents.</p>
         </div>
-
         <div class="card">
           <img src="ros_certificate.jpg" alt="Certification ROS">
           <h4>Foundation Code for ROS</h4>
           <p><strong>Organisme :</strong> The Construct</p>
           <p>Formation sur le développement de logiciels pour la robotique avec ROS, y compris Linux et Python pour la robotique.</p>
         </div>
-
         <div class="card">
           <img src="deep_learning_certificate.jpg" alt="Certification Deep Learning">
           <h4>Getting Started with Deep Learning</h4>
           <p><strong>Organisme :</strong> NVIDIA</p>
           <p>Formation complète sur les bases de l’apprentissage profond avec TensorFlow, CNN et RNN pour la classification d'images et la reconnaissance de motifs.</p>
         </div>
-
         <div class="card">
           <img src="ai_predictive_maintenance.jpg" alt="Certification AI Maintenance prédictive">
           <h4>Applications of AI for Predictive Maintenance</h4>
           <p><strong>Organisme :</strong> NVIDIA</p>
           <p>Formation sur l'application de l'IA pour la maintenance prédictive des machines et équipements industriels, avec des projets pratiques d'analyse de données.</p>
         </div>
-
         <div class="card">
           <img src="linux_essentials_certificate.jpg" alt="Certification Linux Essentials">
           <h4>Linux Essentials</h4>
           <p><strong>Organisme :</strong> Cisco Networking Academy</p>
           <p>Formation certifiée sur les bases du système d'exploitation Linux, la ligne de commande et la sécurité des systèmes Linux.</p>
         </div>
-
         <div class="card">
           <img src="industry_4_certificate.jpg" alt="Certification Industrie 4.0">
           <h4>Les Fondamentaux de l'Industrie 4.0</h4>
