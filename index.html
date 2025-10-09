@@ -73,7 +73,7 @@
       margin-top: 40px;
     }
 
-    /* ===== SECTIONS ===== */
+    /* ===== GENERAL CARD ===== */
     .card {
       background: white;
       padding: 20px;
@@ -99,7 +99,7 @@
       background: #ffffff;
       border-radius: 16px;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-      padding: 30px;
+      padding: 40px;
       transition: all 0.3s ease;
     }
     .skills-block:hover {
@@ -108,12 +108,16 @@
     }
     .skills-list {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 25px;
     }
     .skills-category {
       border-left: 4px solid #4f46e5;
       padding-left: 14px;
+      transition: transform .3s ease;
+    }
+    .skills-category:hover {
+      transform: scale(1.03);
     }
     .skills-category h4 {
       color: #111827;
@@ -134,7 +138,10 @@
       color: #4f46e5;
     }
 
-    @media(max-width: 768px) {
+    @media(max-width: 900px) {
+      .skills-list { grid-template-columns: 1fr 1fr; }
+    }
+    @media(max-width: 600px) {
       .skills-list { grid-template-columns: 1fr; }
     }
   </style>
@@ -198,16 +205,6 @@
           <h4>Système de gestion d'inventaire intelligent</h4>
           <p>Application IoT utilisant RFID pour la gestion des stocks en temps réel avec ESP32, Node.js.</p>
         </div>
-        <div class="card">
-          <img src="Scanner3D.jpg" alt="Scanner 3D">
-          <h4>Scanner 3D</h4>
-          <p>Conception et programmation d’un scanner 3D pour modéliser des objets physiques en modèles numériques précis. Arduino, OpenCV, logiciel de reconstruction 3D.</p>
-        </div>
-        <div class="card">
-          <img src="panneaux_cercles_dominant_color.png" alt="Système embarqué de détection de panneaux">
-          <h4>Système embarqué de détection de panneaux de signalisation routière</h4>
-          <p>Développement d’un système embarqué pour identifier les panneaux routiers à l’aide de caméras et de traitement d’image. Raspberry Pi, OpenCV, Deep Learning.</p>
-        </div>
       </div>
     </section>
 
@@ -217,49 +214,12 @@
       <div class="skills-block">
         <div class="skills-list">
           <div class="skills-category"><h4>💻 Langages</h4><p>Python, C/C++, JavaScript, VHDL, HTML/CSS, Node.js</p></div>
-          <div class="skills-category"><h4>⚙️ Outils & Technologies</h4><p>Raspberry Pi, ESP32, Arduino, MATLAB, LabVIEW, Git/GitHub, Docker, Visual Studio Code, Jupyter Notebook</p></div>
+          <div class="skills-category"><h4>⚙️ Outils & Technologies</h4><p>Raspberry Pi, ESP32, Arduino, MATLAB, LabVIEW, Git/GitHub, Docker, VS Code, Jupyter Notebook</p></div>
           <div class="skills-category"><h4>🤖 IA & Vision</h4><p>OpenCV, TensorFlow/Keras, PyTorch, Scikit-Learn, Deep Learning, Computer Vision, Data Augmentation, CNN</p></div>
+          <div class="skills-category"><h4>💡 Soft Skills</h4><p>Esprit d’analyse, travail en équipe, autonomie, gestion du temps, communication technique, créativité</p></div>
           <div class="skills-category"><h4>🗄️ Bases de données</h4><p>MongoDB, MySQL, Firebase</p></div>
           <div class="skills-category"><h4>🌐 IoT & Réseaux</h4><p>MQTT, Node-RED, REST API, Wi-Fi/Bluetooth, Communication série (UART, I2C, SPI)</p></div>
           <div class="skills-category"><h4>⚡ Systèmes embarqués</h4><p>Conception, capteurs & actionneurs, traitement de signaux, temps réel, microcontrôleurs ARM</p></div>
-          <div class="skills-category"><h4>💡 Soft Skills</h4><p>Esprit d’analyse, travail en équipe, autonomie, gestion du temps, communication technique, créativité</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CERTIFICATIONS ===== -->
-    <section id="certifications">
-      <h3>Certifications & Formations</h3>
-      <div class="grid">
-        <div class="card">
-          <img src="siemens_certificate.jpg" alt="Formation Siemens">
-          <h4>Formation Siemens - Industrie 4.0</h4>
-          <p><strong>Organisme :</strong> Siemens</p>
-          <p>Formation sur les technologies de l'Industrie 4.0, incluant l'automatisation avancée, l'intégration des systèmes et la gestion des processus industriels intelligents.</p>
-        </div>
-        <div class="card">
-          <img src="ros_certificate.jpg" alt="Certification ROS">
-          <h4>Foundation Code for ROS</h4>
-          <p><strong>Organisme :</strong> The Construct</p>
-          <p>Formation sur le développement de logiciels pour la robotique avec ROS, y compris Linux et Python pour la robotique.</p>
-        </div>
-        <div class="card">
-          <img src="deep_learning_certificate.jpg" alt="Certification Deep Learning">
-          <h4>Getting Started with Deep Learning</h4>
-          <p><strong>Organisme :</strong> NVIDIA</p>
-          <p>Formation complète sur les bases de l’apprentissage profond avec TensorFlow, CNN et RNN.</p>
-        </div>
-        <div class="card">
-          <img src="ai_predictive_maintenance.jpg" alt="Certification AI Maintenance prédictive">
-          <h4>Applications of AI for Predictive Maintenance</h4>
-          <p><strong>Organisme :</strong> NVIDIA</p>
-          <p>Formation sur l'application de l'IA pour la maintenance prédictive des machines avec des projets pratiques d'analyse de données.</p>
-        </div>
-        <div class="card">
-          <img src="linux_essentials_certificate.jpg" alt="Certification Linux Essentials">
-          <h4>Linux Essentials</h4>
-          <p><strong>Organisme :</strong> Cisco Networking Academy</p>
-          <p>Formation certifiée sur les bases du système d'exploitation Linux et la ligne de commande.</p>
         </div>
       </div>
     </section>
