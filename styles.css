@@ -77,12 +77,34 @@ body{
 */
 
 /* === PHOTO === */
-.heroPhoto{
-  width:160px; height:160px; border-radius:50%; overflow:hidden;
-  box-shadow:0 12px 30px rgba(79,70,229,.35);
-  border:4px solid #fff; flex:0 0 auto;
+/* === PHOTO DU PROFIL === */
+.heroPhoto {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #fff;
+  background: radial-gradient(circle at center, #c7d2fe 0%, #eef2ff 100%);
+  box-shadow: 0 12px 36px rgba(79, 70, 229, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.heroPhoto img{width:100%; height:100%; object-fit:cover}
+
+.heroPhoto:hover {
+  transform: scale(1.04);
+  box-shadow: 0 16px 42px rgba(79, 70, 229, 0.4);
+}
+
+.heroPhoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
 
 /* === RESPONSIVE === */
 @media(max-width:780px){
@@ -135,4 +157,9 @@ body{
 @media(max-width:768px){
   .grid{grid-template-columns:1fr}
   .skills-list{grid-template-columns:1fr}
+  .heroPhoto {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+  }
 }
