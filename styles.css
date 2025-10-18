@@ -108,3 +108,54 @@ body{
     padding: 6px 10px;
   }
 }
+/* Cartes stats cliquables */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.statLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+  text-decoration: none;
+  transition: transform 140ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.statLink strong {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #111827;
+}
+
+.statLink span {
+  font-family: "Roboto", sans-serif;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+/* Hover/Focus pour ressenti bouton */
+.statLink:hover {
+  transform: translateY(-2px);
+  border-color: #c7d2fe; /* indigo pâle */
+  box-shadow: 0 10px 22px rgba(0,0,0,0.06);
+}
+.statLink:focus {
+  outline: 3px solid #93c5fd; /* focus visible */
+  outline-offset: 2px;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}
+
