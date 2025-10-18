@@ -8,23 +8,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- NAV FIXE EN HAUT À DROITE -->
-  <nav class="topNavRight" aria-label="Navigation principale">
-    <a href="index.html" class="logo">Aya Soukii</a>
-    <div class="navButtons" role="menubar">
-      <a class="btnPrimary" role="menuitem" href="projets.html">Projets</a>
-      <a class="btnGhost" role="menuitem" href="competences.html">Compétences</a>
-      <a class="btnGhost" role="menuitem" href="certifications.html">Certifications</a>
-      <a class="btnGhost" role="menuitem" href="contact.html">Contact</a>
-    </div>
-  </nav>
-
   <div class="container">
     <section class="heroPro" aria-label="Présentation">
       <div class="heroLeft">
         <h1 class="heroTitle">Aya Soukii</h1>
         <p class="heroSub">
-          Élève ingénieure en Électronique Embarquée & Télécoms (ESPRIT). 
+          Élève ingénieure en Électronique Embarquée & Télécoms (ESPRIT).
           Je conçois des systèmes IoT fiables, mêlant embarqué, IA et cloud.
         </p>
 
@@ -37,10 +26,19 @@
           <span class="tag">Firebase & Cloud</span>
         </div>
 
-        <div class="stats" role="list" aria-label="Points clés">
-          <div class="stat" role="listitem"><strong>6+</strong><span>projets concrets</span></div>
-          <div class="stat" role="listitem"><strong>5+</strong><span>certifications</span></div>
-          <div class="stat" role="listitem"><strong>6</strong><span>stages réalisés</span></div>
+        <!-- Les stats deviennent des liens cliquables -->
+        <div class="stats" role="list" aria-label="Accès rapide">
+          <a class="statLink" href="projets.html" role="listitem" aria-label="Voir les projets">
+            <div class="stat"><strong>6+</strong><span>projets concrets</span></div>
+          </a>
+
+          <a class="statLink" href="certifications.html" role="listitem" aria-label="Voir les certifications">
+            <div class="stat"><strong>5+</strong><span>certifications</span></div>
+          </a>
+
+          <a class="statLink" href="stages.html" role="listitem" aria-label="Voir les stages">
+            <div class="stat"><strong>6</strong><span>stages réalisés</span></div>
+          </a>
         </div>
       </div>
 
