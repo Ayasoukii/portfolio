@@ -8,14 +8,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- NAV FIXE HAUT-GAUCHE -->
-  <nav class="topNav" aria-label="Navigation principale">
+  <!-- NAV FIXE EN HAUT À DROITE -->
+  <nav class="topNavRight" aria-label="Navigation principale">
     <a href="index.html" class="logo">Aya Soukii</a>
-    <div class="navLinks" role="menubar">
-      <a role="menuitem" href="projets.html">Projets</a>
-      <a role="menuitem" href="competences.html">Compétences</a>
-      <a role="menuitem" href="certifications.html">Certifications</a>
-      <a role="menuitem" href="contact.html">Contact</a>
+    <div class="navButtons" role="menubar">
+      <a class="btnPrimary" role="menuitem" href="projets.html">Projets</a>
+      <a class="btnGhost" role="menuitem" href="competences.html">Compétences</a>
+      <a class="btnGhost" role="menuitem" href="certifications.html">Certifications</a>
+      <a class="btnGhost" role="menuitem" href="contact.html">Contact</a>
     </div>
   </nav>
 
@@ -23,7 +23,10 @@
     <section class="heroPro" aria-label="Présentation">
       <div class="heroLeft">
         <h1 class="heroTitle">Aya Soukii</h1>
-        <p class="heroSub">Élève ingénieure en Électronique Embarquée & Télécoms (ESPRIT). Je conçois des systèmes IoT fiables, mêlant embarqué, IA et cloud.</p>
+        <p class="heroSub">
+          Élève ingénieure en Électronique Embarquée & Télécoms (ESPRIT). 
+          Je conçois des systèmes IoT fiables, mêlant embarqué, IA et cloud.
+        </p>
 
         <div class="tags">
           <span class="tag">IoT & ESP32</span>
@@ -33,9 +36,6 @@
           <span class="tag">MQTT / Node.js</span>
           <span class="tag">Firebase & Cloud</span>
         </div>
-
-        <!-- Ancienne rangée de boutons supprimée -->
-        <!-- <nav class="ctaRow" aria-label="Navigation principale"> ... </nav> -->
 
         <div class="stats" role="list" aria-label="Points clés">
           <div class="stat" role="listitem"><strong>6+</strong><span>projets concrets</span></div>
