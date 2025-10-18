@@ -20,78 +20,91 @@ body{
 .pageTitle{
   font-family:'Poppins',sans-serif; font-weight:700; font-size:24px; margin:0; color:#111827
 }
-/* NAV FIXE EN HAUT À GAUCHE */
-.topNav {
+/* NAVIGATION FIXE EN HAUT À DROITE */
+.topNavRight {
   position: fixed;
-  top: 14px;
-  left: 18px;
+  top: 15px;
+  right: 20px;
   z-index: 1000;
   display: flex;
   align-items: center;
-  gap: 22px;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: saturate(140%) blur(6px);
-  padding: 10px 16px;
+  gap: 25px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  padding: 10px 20px;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 }
 
-.topNav .logo {
-  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+.topNavRight .logo {
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
-  font-size: 1.05rem;
-  color: #1f2937; /* gris foncé */
+  font-size: 1rem;
+  color: #222;
   text-decoration: none;
   white-space: nowrap;
 }
 
-.topNav .navLinks {
+.topNavRight .navButtons {
   display: flex;
   align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
+  gap: 12px;
 }
 
-.topNav .navLinks a {
-  font-family: "Roboto", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-weight: 500;
-  font-size: 0.95rem;
-  color: #374151;
-  text-decoration: none;
-  padding: 6px 10px;
+/* STYLE DES BOUTONS */
+.btnPrimary, .btnGhost {
+  display: inline-block;
+  padding: 8px 14px;
   border-radius: 8px;
-  transition: background 160ms ease, color 160ms ease, transform 120ms ease;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
 }
 
-.topNav .navLinks a:hover {
-  background: #eef2ff;       /* léger violet/indigo pâle */
-  color: #1d4ed8;            /* indigo */
+.btnPrimary {
+  background: #1d4ed8; /* indigo */
+  color: white;
 }
 
-.topNav .navLinks a:active {
-  transform: translateY(1px);
+.btnPrimary:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
 }
 
-/* Évite que le contenu passe sous la nav fixe */
+.btnGhost {
+  border: 1px solid #d1d5db;
+  color: #374151;
+  background: white;
+}
+
+.btnGhost:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+  transform: translateY(-1px);
+}
+
+/* ESPACE SOUS LA NAV FIXE */
 .container {
-  padding-top: 96px; /* ajuste si ta nav est plus haute */
+  padding-top: 90px;
 }
 
-/* Responsive */
-@media (max-width: 640px) {
-  .topNav {
-    left: 0;
-    right: 0;
-    margin: 0 10px;
-    border-radius: 12px;
-    justify-content: space-between;
-    padding: 10px 14px;
-  }
-  .topNav .navLinks {
+/* Responsive mobile */
+@media (max-width: 700px) {
+  .topNavRight {
+    flex-direction: column;
+    align-items: flex-end;
     gap: 10px;
+    padding: 10px 15px;
   }
-  .topNav .navLinks a {
+
+  .navButtons {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .btnPrimary, .btnGhost {
     font-size: 0.9rem;
-    padding: 6px 8px;
+    padding: 6px 10px;
   }
 }
