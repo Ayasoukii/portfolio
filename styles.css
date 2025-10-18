@@ -163,3 +163,77 @@ body{
     margin: 0 auto;
   }
 }
+/* === SECTION CONTACT === */
+.contactSection {
+  background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+  border-radius: 18px;
+  padding: 40px 30px;
+  margin-top: 60px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(79, 70, 229, 0.12);
+}
+
+.contactTitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 14px;
+}
+
+.contactIntro {
+  color: #374151;
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto 28px;
+}
+
+.contactGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.contactCard {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px 22px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  min-width: 230px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contactCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(79, 70, 229, 0.15);
+}
+
+.contactCard h3 {
+  color: #1f2937;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.contactCard a {
+  color: var(--primary);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.contactCard a:hover {
+  text-decoration: underline;
+}
+
+.contactCTA {
+  margin-top: 20px;
+}
+
+@media (max-width: 700px) {
+  .contactCard {
+    width: 100%;
+  }
+}
+
