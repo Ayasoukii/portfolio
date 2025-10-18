@@ -1,162 +1,138 @@
-/* ==== BASE GÉNÉRALE ==== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+:root{
+  --primary:#4f46e5;
+  --ink:#1a202c;
+  --muted:#6b7280;
+  --bg:#f7fafc;
+}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{
+  font-family:'Roboto',sans-serif; background:var(--bg); color:var(--ink);
+  margin:0; padding:24px; line-height:1.6;
+}
+.container{max-width:1100px; margin:0 auto}
+
+/* Sous-entêtes des pages internes */
+.subHeader{
+  display:flex; align-items:center; gap:12px; margin-bottom:16px;
+}
+.logo{color:var(--primary); text-decoration:none; font-weight:600}
+.pageTitle{
+  font-family:'Poppins',sans-serif; font-weight:700; font-size:24px; margin:0; color:#111827
 }
 
-body {
-  font-family: "Roboto", sans-serif;
-  color: #1f2937; /* gris foncé */
-  background-color: #f9fafb;
-  line-height: 1.6;
+/* HERO (accueil) */
+.heroPro{
+  background:linear-gradient(135deg,#eef2ff 0%,#e9d5ff 35%,#dbeafe 100%);
+  border-radius:16px; padding:28px; box-shadow:0 8px 28px rgba(2,6,23,.12);
+  display:flex; gap:28px; align-items:center; margin:0 0 12px;
+}
+.heroLeft{flex:1; min-width:0}
+.heroTitle{font-family:Poppins,system-ui; font-weight:700; font-size:32px; margin:0 0 6px; color:#111827}
+.heroSub{color:#374151; margin:0 0 14px; font-size:17px}
+.tags{display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 18px}
+.tag{
+  background:#ffffffcc; border:1px solid #ffffff; color:#1f2937;
+  padding:6px 10px; border-radius:999px; font-size:13px; font-weight:600;
+  backdrop-filter:saturate(1.2) blur(2px);
 }
 
-/* ==== CONTAINER PRINCIPAL ==== */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 20px;
+/* === BOUTONS === */
+.btnPrimary,.btnGhost{
+  padding:10px 14px; border-radius:10px;
+  text-decoration:none; font-weight:600;
+  display:inline-block; text-align:center;
+  transition:transform .25s ease, background .25s ease, box-shadow .25s ease;
+}
+.btnPrimary{
+  background:var(--primary); color:#fff; border:none;
+}
+.btnPrimary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 18px rgba(79,70,229,.25);
+}
+.btnGhost{
+  background:#fff; color:var(--primary); border:1px solid #c7d2fe;
+}
+.btnGhost:hover{
+  background:#eef2ff; transform:translateY(-2px);
 }
 
-/* ==== SECTION HERO ==== */
-.heroPro {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
-  padding: 60px 40px;
+/* === STATS transformées en boutons === */
+.statsButtons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:18px;
+}
+.statsButtons a{
+  flex:1 1 160px;
 }
 
-.heroLeft {
-  flex: 1 1 500px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+/* Ancien style .stats (non utilisé désormais)
+.stats{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-top:18px}
+.stat{background:#fff; border:1px solid #e5e7eb; border-radius:12px; padding:10px 12px; text-align:center}
+.stat strong{display:block; font-size:20px; color:#111827}
+.stat span{display:block; font-size:12px; color:#6b7280}
+*/
+
+/* === PHOTO === */
+.heroPhoto{
+  width:160px; height:160px; border-radius:50%; overflow:hidden;
+  box-shadow:0 12px 30px rgba(79,70,229,.35);
+  border:4px solid #fff; flex:0 0 auto;
+}
+.heroPhoto img{width:100%; height:100%; object-fit:cover}
+
+/* === RESPONSIVE === */
+@media(max-width:780px){
+  .heroPro{flex-direction:column; align-items:flex-start}
+  .statsButtons{flex-direction:column; width:100%}
+  .statsButtons a{width:100%}
 }
 
-.heroTitle {
-  font-family: "Poppins", sans-serif;
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: #111827;
+/* === GRILLE PROJETS / CARTES === */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  margin-top:20px;
 }
-
-.heroSub {
-  font-size: 1.05rem;
-  color: #374151;
-  line-height: 1.6;
+.card{
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(2,6,23,.04);
+  transition:transform .3s ease, box-shadow .3s ease;
 }
-
-/* ==== TAGS ==== */
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
+.card:hover{
+  transform:scale(1.03);
+  box-shadow:0 8px 18px rgba(79,70,229,.2);
 }
+.card img{width:100%; border-radius:8px; margin-bottom:10px}
 
-.tag {
-  background: #e0e7ff;
-  color: #1e3a8a;
-  font-size: 0.85rem;
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-weight: 500;
+/* === COMPÉTENCES === */
+.skills-block{
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 8px 25px rgba(0,0,0,.05);
+  padding:30px;
 }
-
-/* ==== BOUTONS ==== */
-.btnPrimary, .btnGhost {
-  display: inline-block;
-  padding: 10px 18px;
-  border-radius: 10px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
-  text-align: center;
-  cursor: pointer;
+.skills-block:hover{box-shadow:0 12px 35px rgba(79,70,229,.15)}
+.skills-list{display:grid; grid-template-columns:1fr 1fr; gap:25px}
+.skills-category{border-left:4px solid var(--primary); padding-left:14px}
+.skills-category h4{
+  color:#111827;
+  font-family:'Poppins',sans-serif;
+  font-weight:600;
+  margin:0 0 6px;
 }
+.skills-category p{color:#374151; font-size:15px; margin:0}
 
-/* Bouton principal (bleu) */
-.btnPrimary {
-  background: #1d4ed8;
-  color: #fff;
-  border: none;
-}
+/* === FOOTER === */
+.subFooter{margin:28px 0; text-align:center; color:#6b7280; font-size:14px}
 
-.btnPrimary:hover {
-  background: #2563eb;
-  transform: translateY(-2px);
-}
-
-/* Bouton clair (ghost) */
-.btnGhost {
-  background: #fff;
-  color: #374151;
-  border: 1px solid #d1d5db;
-}
-
-.btnGhost:hover {
-  background: #f3f4f6;
-  border-color: #9ca3af;
-  transform: translateY(-2px);
-}
-
-/* ==== GROUPE DE BOUTONS (Stats) ==== */
-.statsButtons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 25px;
-}
-
-/* ==== IMAGE DE DROITE ==== */
-.heroPhoto {
-  flex: 1 1 300px;
-  display: flex;
-  justify-content: center;
-}
-
-.heroPhoto img {
-  width: 320px;
-  height: auto;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
-
-/* ==== RESPONSIVE ==== */
-@media (max-width: 900px) {
-  .heroPro {
-    flex-direction: column-reverse;
-    text-align: center;
-    padding: 40px 20px;
-  }
-
-  .heroLeft {
-    align-items: center;
-  }
-
-  .heroPhoto img {
-    width: 240px;
-  }
-
-  .statsButtons {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 640px) {
-  .heroTitle {
-    font-size: 2rem;
-  }
-
-  .btnPrimary, .btnGhost {
-    width: 100%;
-  }
+@media(max-width:768px){
+  .grid{grid-template-columns:1fr}
+  .skills-list{grid-template-columns:1fr}
 }
