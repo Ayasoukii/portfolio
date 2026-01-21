@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Détection d’émotions – Aya Soukii</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Aya Soukii</a>
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="projets.html" class="active">Projets</a>
+        <a href="competences.html">Compétences</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1 class="pageTitle">Détection d’émotions faciales par IA embarquée</h1>
+
+    <img src="figures/emotion_stm32.jpg" alt="STM32 IA Emotion" style="width:100%; max-width:700px; margin: 20px 0; border-radius: 8px;">
+
+    <section>
+      <h2> Objectif</h2>
+      <p>Concevoir et déployer un système d’intelligence artificielle embarquée capable de reconnaître des émotions faciales à partir d’images, en respectant les contraintes de calcul et de mémoire d’un microcontrôleur STM32.</p>
+      <p>Le projet vise des applications en interaction homme–machine, systèmes intelligents et IA embarquée.</p>
+    </section>
+
+    <section>
+      <h2> Dataset utilisé</h2>
+      <ul>
+        <li><strong>FER (Facial Expression Recognition)</strong></li>
+        <li>Images en niveaux de gris – 48×48 px</li>
+        <li>7 classes d’émotions : angry, disgusted, fearful, happy, neutral, sad, surprised</li>
+        <li>28 709 images pour l’entraînement</li>
+        <li>7 178 images pour le test</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2> Étapes réalisées</h2>
+      <ul>
+        <li>Prétraitement des images (normalisation, redimensionnement)</li>
+        <li>Entraînement d’un CNN avec TensorFlow/Keras</li>
+        <li>Évaluation du modèle (accuracy, matrice de confusion)</li>
+        <li>Conversion des images de test en tableaux C</li>
+        <li>Intégration avec STM32Cube.AI</li>
+        <li>Déploiement sur STM32F746G-DISCO</li>
+        <li>Tests d’inférence avec images statiques</li>
+        <li>Affichage des résultats via UART (PuTTY), puis sur écran LCD</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2> Technologies & outils</h2>
+      <ul>
+        <li>Python, TensorFlow/Keras, OpenCV</li>
+        <li>STM32CubeMX, STM32CubeIDE, X-CUBE-AI</li>
+        <li>STM32F746G-DISCO</li>
+        <li>UART (PuTTY), écran LCD embarqué</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2> Résultats obtenus</h2>
+      <ul>
+        <li>Accuracy globale : ~68 % sur l’ensemble de test</li>
+        <li>Inférence correcte sur microcontrôleur malgré ressources limitées</li>
+        <li>Prédiction fiable des émotions dominantes</li>
+        <li>Affichage fonctionnel sur UART et écran LCD</li>
+        <li>Validation complète du pipeline IA → embarqué</li>
+      </ul>
+
+      <h3>▶️ Exemple de prédiction (Google Colab)</h3>
+      <img src="figures/emotion_result.jpg" alt="Résultat prédiction IA" style="width:100%; max-width:500px; margin: 10px 0; border-radius: 6px;">
+
+      <h3>📊 Matrice de confusion – Ensemble de test</h3>
+      <img src="figures/confusion_matrix.jpg" alt="Matrice de confusion IA" style="width:100%; max-width:700px; margin: 10px 0; border-radius: 6px;">
+    </section>
+
+    <section>
+      <h2> Télécharger le rapport du projet</h2>
+      <a href="docs/rapport_emotion_IA_STM32.pdf" download class="btn">
+        📥 Télécharger le PDF
+      </a>
+    </section>
+
+    <a href="projets.html" class="btn">← Retour aux projets</a>
+  </div>
+
+</body>
+</html>
