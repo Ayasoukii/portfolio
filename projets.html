@@ -1,16 +1,17 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projets — Aya Soukii</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Détection des maladies des plantes – Aya Souki</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+
   <nav class="navbar">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">Aya Soukii</a>
+      <a href="index.html" class="nav-logo">Aya Souki</a>
       <div class="nav-links">
         <a href="index.html">Accueil</a>
         <a href="projets.html" class="active">Projets</a>
@@ -22,71 +23,65 @@
   </nav>
 
   <div class="container">
-    <h1 class="pageTitle">Mes Projets</h1>
-<div class="grid">
-  <article class="card">
-  <img src="figures/emotion_stm32.jpg" alt="Reconnaissance d’émotions faciales IA STM32">
-  <h4>Reconnaissance d’émotions faciales embarquée</h4>
-  <p>Déploiement d’un modèle CNN optimisé pour STM32. Traitement d’images avec OpenCV, reconnaissance faciale en temps réel via UART et écran LCD.</p>
-  <a href="emotion-ia.html" class="btn">Voir plus</a>
-</article>
+    <h1 class="pageTitle">Détection des maladies des plantes par Deep Learning</h1>
 
-<article class="card">
-  <img src="figures/devops_pipeline.jpg" alt="Pipeline DevOps – Jenkins & Docker">
-  <h4>Pipeline DevOps – Jenkins, Docker & MySQL</h4>
-  <p>Configuration d’un pipeline CI/CD avec Docker, Jenkins, GitHub et MySQL. Déploiement automatisé d'applications avec suivi des versions et documentation complète.</p>
-  <a href="devops.html" class="btn">Voir plus</a>
-</article>
+    <img src="figures/plantes.jpg" alt="Feuille malade détectée" style="width:100%; max-width:700px; margin: 20px 0; border-radius: 8px;">
 
-<article class="card">
-  <img src="figures/ims_networks.jpg" alt="Projet IMS – Réseaux télécoms nouvelle génération">
-  <h4>Projet IMS – Réseaux télécoms nouvelle génération</h4>
-  <p>Analyse de l'architecture IMS : protocoles SIP/Diameter, appels VoLTE, gestion de la QoS et mécanismes de facturation.</p>
-  <a href="ims.html" class="btn">Voir plus</a>
-</article>
+    <section>
+      <h2> Objectif du projet</h2>
+      <p>
+        Concevoir un système intelligent de détection et de reconnaissance des maladies des plantes à partir d’images de feuilles. L'objectif est d'automatiser l'identification des maladies pour assister les agriculteurs dans le diagnostic rapide et la prévention.
+      </p>
+    </section>
 
-  <article class="card">
-    <img src="figures/Aeroqium.jpg" alt="AEROQIUM — Serre connectée aéroponique">
-    <h4>AEROQIUM — Serre connectée aéroponique</h4>
-    <p>Serre intelligente intégrant un aquarium, avec arrosage automatisé, capteurs (pH, EC, température). Contrôle via app Flutter et stockage dans Firebase.</p>
-    <a href="aeroqium.html" class="btn">Voir plus</a>
-  </article>
+    <section>
+      <h2> Méthodologie</h2>
+      <ul>
+        <li>Collecte et préparation d’un dataset d’images de feuilles (malades et saines)</li>
+        <li>Prétraitement des images (redimensionnement, normalisation, filtrage)</li>
+        <li>Entraînement d’un modèle CNN avec TensorFlow/Keras</li>
+        <li>Évaluation du modèle : matrice de confusion, accuracy, validation croisée</li>
+        <li>Déploiement sur Raspberry Pi avec caméra et affichage du diagnostic</li>
+      </ul>
+    </section>
 
-  <article class="card">
-    <img src="figures/plantes.jpg" alt="Détection des maladies des plantes">
-    <h4>Détection des maladies des plantes (Deep Learning)</h4>
-    <p>Modèle de classification d’images d’arbres fruitiers à l’aide de TensorFlow/Keras. Augmentation des données et entraînement sur un dataset Kaggle.</p>
-    <a href="maladies-plantes.html" class="btn">Voir plus</a>
-  </article>
+    <section>
+      <h2> Technologies & outils</h2>
+      <ul>
+        <li>Python, TensorFlow, Keras, OpenCV</li>
+        <li>Google Colab (modèle)</li>
+        <li>Raspberry Pi, caméra USB, écran LCD</li>
+      </ul>
+    </section>
 
-  <article class="card">
-    <img src="figures/domotique.jpg" alt="Système domotique Node.js">
-    <h4>Système domotique basé sur Node.js</h4>
-    <p>Création d’un dashboard intelligent avec MQTT, Node-RED, MongoDB. Contrôle de lumière, température, et sécurité dans un environnement connecté.</p>
-    <a href="domotique.html" class="btn">Voir plus</a>
-  </article>
+    <section>
+      <h2> Résultats</h2>
+      <ul>
+        <li>Précision satisfaisante sur plusieurs classes de maladies</li>
+        <li>Capacité d'inférence sur matériel à faible consommation</li>
+        <li>Utilisation terrain envisageable dans des serres ou exploitations agricoles</li>
+      </ul>
+    </section>
 
-  <article class="card">
-    <img src="figures/RFID.jpg" alt="Inventaire RFID">
-    <h4>Gestion d'inventaire RFID</h4>
-    <p>Système de suivi d’objets avec badges RFID et ESP32. Base de données en ligne et affichage des mouvements en temps réel via Node.js.</p>
-    <a href="rfid.html" class="btn">Voir plus</a>
-  </article>
+    <section>
+      <h2> Présentation du projet</h2>
+      <p>
+        Tu peux consulter la présentation complète sur Canva :
+      </p>
+      <a href="https://www.canva.com/design/DAFiVbEXsG8/UEjbALXIrBIdjD3qxk3DeA/view?utm_content=DAFiVbEXsG8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h21ad3e6db4" target="_blank" class="btn">
+        📽 Voir la présentation Canva
+      </a>
+    </section>
 
-  <article class="card">
-    <img src="figures/Scanner3D.jpg" alt="Scanner 3D">
-    <h4>Scanner 3D</h4>
-    <p>Scanner tournant avec capteurs et caméra pour reconstruction 3D. Utilisation d’Arduino, OpenCV et d’algorithmes de traitement d’image.</p>
-    <a href="scanner3d.html" class="btn">Voir plus</a>
-  </article>
+    <section>
+      <h2>📄 Télécharger le rapport</h2>
+      <a href="Rapport_PFE.pdf" download class="btn">
+        📥 Télécharger le rapport PDF
+      </a>
+    </section>
 
-  <article class="card">
-    <img src="figures/panneaux_cercles_dominant_color.png" alt="Détection de panneaux routiers">
-    <h4>Détection de panneaux routiers embarquée</h4>
-    <p>Application sur Raspberry Pi avec caméra et OpenCV pour détecter les panneaux routiers. Modèle Deep Learning entraîné sur dataset public.</p>
-    <a href="panneaux.html" class="btn">Voir plus</a>
-  </article>
-</div>
+    <a href="projets.html" class="btn">← Retour aux projets</a>
   </div>
+
 </body>
 </html>
