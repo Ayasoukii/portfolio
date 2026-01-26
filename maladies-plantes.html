@@ -30,27 +30,26 @@
     <section>
       <h2> Objectif du projet</h2>
       <p>
-        Concevoir un système intelligent basé sur le deep learning capable de détecter et classifier les maladies des plantes à partir d’images. L’objectif est de fournir une aide rapide et accessible aux agriculteurs pour le diagnostic des cultures.
+        Concevoir un système intelligent de détection et de reconnaissance des maladies des plantes à partir d’images de feuilles. L'objectif est d'automatiser l'identification des maladies pour assister les agriculteurs dans le diagnostic rapide et la prévention.
       </p>
     </section>
 
     <section>
-      <h2> Architecture du système</h2>
+      <h2> Méthodologie</h2>
       <ul>
-        <li>Raspberry Pi comme plateforme embarquée</li>
-        <li>Caméra pour la capture d’images de feuilles</li>
-        <li>Réseau de neurones convolutif (CNN) entraîné sur des images de feuilles saines et malades</li>
-        <li>Classification des maladies : mildiou, taches foliaires, oïdium, etc.</li>
-        <li>Affichage du diagnostic sur un écran LCD</li>
+        <li>Collecte et préparation d’un dataset d’images de feuilles (malades et saines)</li>
+        <li>Prétraitement des images (redimensionnement, normalisation, filtrage)</li>
+        <li>Entraînement d’un modèle CNN avec TensorFlow/Keras</li>
+        <li>Évaluation du modèle : matrice de confusion, accuracy, validation croisée</li>
+        <li>Déploiement sur Raspberry Pi avec caméra et affichage du diagnostic</li>
       </ul>
     </section>
 
     <section>
       <h2> Technologies & outils</h2>
       <ul>
-        <li>Python, TensorFlow, Keras</li>
-        <li>OpenCV pour le traitement d’image</li>
-        <li>Google Colab (entraînement du modèle)</li>
+        <li>Python, TensorFlow, Keras, OpenCV</li>
+        <li>Google Colab (modèle)</li>
         <li>Raspberry Pi, caméra USB, écran LCD</li>
       </ul>
     </section>
@@ -58,24 +57,26 @@
     <section>
       <h2> Résultats</h2>
       <ul>
-        <li>Détection visuelle fiable avec un modèle CNN</li>
-        <li>Temps de traitement optimisé pour Raspberry Pi</li>
-        <li>Expérimentation réussie sur plusieurs types de feuilles</li>
+        <li>Précision satisfaisante sur plusieurs classes de maladies</li>
+        <li>Capacité d'inférence sur matériel à faible consommation</li>
+        <li>Utilisation terrain envisageable dans des serres ou exploitations agricoles</li>
       </ul>
     </section>
 
     <section>
-      <h2> Présentation en ligne</h2>
-      <p>Tu peux consulter la présentation détaillée du projet sur Canva :</p>
+      <h2> Présentation du projet</h2>
+      <p>
+        Tu peux consulter la présentation complète sur Canva :
+      </p>
       <a href="https://www.canva.com/design/DAFiVbEXsG8/UEjbALXIrBIdjD3qxk3DeA/view?utm_content=DAFiVbEXsG8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h21ad3e6db4" target="_blank" class="btn">
-        📽 Voir la présentation
+        📽 Voir la présentation Canva
       </a>
     </section>
 
     <section>
-      <h2>📄 Télécharger le rapport complet</h2>
+      <h2>📄 Télécharger le rapport</h2>
       <a href="docs/Rapport_PFE.pdf" download class="btn">
-        📥 Télécharger le PDF
+        📥 Télécharger le rapport PDF
       </a>
     </section>
 
