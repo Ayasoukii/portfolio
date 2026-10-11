@@ -1,9 +1,28 @@
-Bienvenue sur mon portfolio !  
-Ce site présente mes projets académiques et personnels dans le domaine de l’**électronique embarquée, IoT et intelligence artificielle**.
+# Portfolio — Aya Soukii
 
-## 🚀 Mise en ligne avec GitHub Pages
+Portfolio statique (HTML/CSS, sans build) d'une ingénieure en Électronique Embarquée et Télécommunications : systèmes embarqués, IoT, IA, applications web et DevOps.
 
-### 1. Cloner ce dépôt
+Site : https://ayasoukii.github.io/portfolio/
+
+## Structure
+
+- `index.html`, `projets.html`, `iqc.html`, `emotion-ia.html`, `devops.html`, `stages.html`, `competences.html`, `certifications.html`, `contact.html`
+- `styles.css` : feuille de style unique
+- `figures/` : images des projets ; `docs/` : rapports PDF
+- `sitemap.xml`, `robots.txt` : référencement
+
+## Aperçu local
+
 ```bash
-git clone https://github.com/Ayasoukii/portfolio.git
-cd portfolio
+python -m http.server 8000
+```
+
+Puis ouvrir http://localhost:8000.
+
+## Publication
+
+GitHub Pages : Settings → Pages → branche `main`, dossier `/ (root)`.
+
+## Confidentialité
+
+La page `iqc.html` décrit le projet réalisé chez LEONI sans aucune donnée, capture ni code de l'entreprise.

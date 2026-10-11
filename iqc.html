@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digitalisation de l’inspection à réception (IQC) — Aya Soukii</title>
+  <meta name="description" content="Fiche projet : application web de contrôle qualité à réception (IQC) réalisée chez LEONI Wiring Systems Tunisia — Django REST Framework, PostgreSQL, Angular 17, Docker.">
+  <link rel="canonical" href="https://ayasoukii.github.io/portfolio/iqc.html">
+  <meta property="og:title" content="Digitalisation du processus d’inspection à réception (IQC)">
+  <meta property="og:description" content="Application web de contrôle qualité à réception, LEONI Wiring Systems Tunisia — Django, Angular 17, PostgreSQL, Docker.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ayasoukii.github.io/portfolio/iqc.html">
+  <meta name="theme-color" content="#4338ca">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <nav class="navbar" aria-label="Navigation principale">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Aya Soukii</a>
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="projets.html" aria-current="page">Projets</a>
+        <a href="stages.html">Stages</a>
+        <a href="competences.html">Compétences</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="container">
+    <article class="doc">
+      <p class="breadcrumb"><a href="projets.html">← Projets</a></p>
+      <h1 class="pageTitle" style="text-align:left">Digitalisation du processus d’inspection à réception (IQC)</h1>
+      <p>Application web pour numériser et guider le contrôle qualité des composants à leur réception, réalisée au sein du service Qualité / Incoming Quality Control de LEONI Wiring Systems Tunisia.</p>
+
+      <dl class="meta">
+        <div><dt>Entreprise</dt><dd>LEONI Wiring Systems Tunisia</dd></div>
+        <div><dt>Service</dt><dd>Qualité / Incoming Quality Control</dd></div>
+        <div><dt>Formation</dt><dd>Diplôme National d’Ingénieur, Génie électrique, Électronique Embarquée et Télécommunications (EET), ESPRIM</dd></div>
+        <div><dt>Type</dt><dd>Application web full-stack avec aide à l’inspection par IA</dd></div>
+      </dl>
+
+      <div class="notice" role="note">
+        <strong>Périmètre et confidentialité.</strong>
+        Cette page décrit l’approche et la technique. Aucune donnée, capture d’écran, référence de composant,
+        fiche de contrôle ou code appartenant à LEONI n’est publié ici. Le dépôt du projet n’est pas lié publiquement.
+        Ce portfolio ne présente pas l’application comme déployée en production.
+      </div>
+
+      <section>
+        <h2>Contexte et problème</h2>
+        <p>
+          À réception, un inspecteur contrôle des composants de faisceaux électriques selon une fiche de contrôle
+          propre à chaque référence : caractéristiques à vérifier, moyens de mesure, tolérances et défauts connus.
+          Cette fiche existait sous forme papier. L’objectif du projet est de la numériser, de guider l’inspecteur
+          et de produire automatiquement les rapports d’inspection avec une traçabilité complète.
+        </p>
+      </section>
+
+      <section>
+        <h2>Solution</h2>
+        <ol class="flow" aria-label="Déroulement d’une inspection">
+          <li>Réception et référence article</li>
+          <li>Fiche de contrôle associée</li>
+          <li>Échantillonnage</li>
+          <li>Contrôles dimensionnels et visuels</li>
+          <li>Verdict proposé</li>
+          <li>Décision de l’inspecteur</li>
+          <li>Rapport d’inspection</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Fonctionnalités</h2>
+        <ul>
+          <li><strong>Informations de réception et références articles :</strong> chaque référence est reliée à une annexe qui définit la logique de contrôle (caractéristiques, moyens de mesure, tolérances).</li>
+          <li><strong>Échantillonnage :</strong> taille d’échantillon d’un lot déterminée par une table AQL, avec des réglages propres à certaines annexes.</li>
+          <li><strong>Contrôles dimensionnels :</strong> saisie manuelle des mesures ou lecture depuis un micromètre USB.</li>
+          <li><strong>Inspection visuelle assistée :</strong> photos du composant sur plusieurs faces, analyse visuelle et lecture du marquage par OCR, avec comparaison à l’attendu.</li>
+          <li><strong>Rapports d’inspection :</strong> export Excel et PDF.</li>
+          <li><strong>Traçabilité :</strong> journal d’audit des actions sensibles.</li>
+          <li><strong>Accès par rôles :</strong> inspecteur, administrateur et super-administrateur, vérifiés côté serveur.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Principe de conception : l’IA propose, l’humain décide</h2>
+        <p>
+          Le verdict de l’IA (conforme, non conforme, indéterminé ou données insuffisantes) est enregistré à part.
+          Le résultat qui figure dans le rapport n’est écrit que par une action authentifiée d’un inspecteur.
+          Quand l’IA n’a pas de quoi conclure, elle renvoie vers le contrôle humain au lieu d’affirmer une conformité.
+        </p>
+        <p>
+          <strong>Limite assumée :</strong> l’outil assiste le contrôle, il ne certifie pas automatiquement les pièces.
+          La couverture de l’analyse visuelle dépend des images de référence et de défauts réellement disponibles
+          par composant ; tous les composants ne peuvent donc pas recevoir un verdict IA.
+        </p>
+      </section>
+
+      <section>
+        <h2>Architecture</h2>
+        <ul>
+          <li>Interface <strong>Angular 17</strong> (TypeScript, RxJS), servie derrière <strong>Nginx</strong>.</li>
+          <li>API <strong>Django</strong> / <strong>Django REST Framework</strong> (Python), exécutée avec Gunicorn.</li>
+          <li>Base <strong>PostgreSQL</strong> ; tâches asynchrones <strong>Celery</strong> avec <strong>Redis</strong> pour l’analyse d’images.</li>
+          <li>Authentification par jetons JWT en cookie HttpOnly avec protection CSRF.</li>
+          <li>Orchestration <strong>Docker Compose</strong> (base, Redis, backend, worker Celery, frontend, migrations).</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Stack technique</h2>
+        <div class="table-wrap">
+          <table class="stack">
+            <tbody>
+              <tr><th scope="row">Backend</th><td>Python, Django, Django REST Framework, SimpleJWT</td></tr>
+              <tr><th scope="row">Base de données</th><td>PostgreSQL</td></tr>
+              <tr><th scope="row">Tâches asynchrones</th><td>Celery, Redis</td></tr>
+              <tr><th scope="row">Frontend</th><td>Angular 17, TypeScript, RxJS, Chart.js</td></tr>
+              <tr><th scope="row">Vision et OCR</th><td>OpenCLIP, DINOv2, PatchCore, FAISS, PaddleOCR</td></tr>
+              <tr><th scope="row">Déploiement</th><td>Docker, Docker Compose, Nginx, Gunicorn</td></tr>
+              <tr><th scope="row">Rapports</th><td>Excel (openpyxl), PDF (ReportLab)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2>Ce que j’ai appris</h2>
+        <ul>
+          <li>Modéliser un processus qualité industriel en API REST et en base relationnelle.</li>
+          <li>Concevoir une IA d’aide à la décision prudente, avec validation humaine et traçabilité.</li>
+          <li>Conteneuriser une application multi-services et documenter son exploitation (sauvegarde, restauration, supervision).</li>
+        </ul>
+      </section>
+
+      <p><a class="btn" href="projets.html">← Retour aux projets</a></p>
+    </article>
+  </main>
+
+  <footer class="subFooter">© 2026 Aya Soukii — Portfolio</footer>
+</body>
+</html>

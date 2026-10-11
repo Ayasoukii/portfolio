@@ -1,75 +1,134 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aya Soukii — Accueil</title>
-  <link href="styles.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aya Soukii — Ingénieure en Électronique Embarquée & Télécommunications</title>
+  <meta name="description" content="Portfolio d’Aya Soukii, ingénieure diplômée (génie électrique, Électronique Embarquée et Télécommunications, ESPRIM) : IoT, systèmes embarqués, IA, applications web et DevOps.">
+  <link rel="canonical" href="https://ayasoukii.github.io/portfolio/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Aya Soukii — Ingénieure en Électronique Embarquée & Télécommunications">
+  <meta property="og:description" content="Systèmes embarqués, IoT, IA, applications web et DevOps. Projet récent : digitalisation du contrôle qualité à réception (IQC) chez LEONI.">
+  <meta property="og:image" content="https://ayasoukii.github.io/portfolio/figures/photo_aya.jpg">
+  <meta property="og:url" content="https://ayasoukii.github.io/portfolio/">
+  <meta name="theme-color" content="#4338ca">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Aya Soukii",
+    "jobTitle": "Ingénieure en Électronique Embarquée et Télécommunications",
+    "alumniOf": {"@type": "CollegeOrUniversity", "name": "ESPRIM"},
+    "url": "https://ayasoukii.github.io/portfolio/",
+    "sameAs": [
+      "https://github.com/Ayasoukii",
+      "https://www.linkedin.com/in/aya-souki-022b32219/"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <div class="container">
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <nav class="navbar" aria-label="Navigation principale">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Aya Soukii</a>
+      <div class="nav-links">
+        <a href="index.html" aria-current="page">Accueil</a>
+        <a href="projets.html">Projets</a>
+        <a href="stages.html">Stages</a>
+        <a href="competences.html">Compétences</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="container">
     <section class="heroPro" aria-label="Présentation">
       <div class="heroLeft">
         <h1 class="heroTitle">Aya Soukii</h1>
+        <p class="heroRole">Ingénieure diplômée — Électronique Embarquée & Télécommunications</p>
         <p class="heroSub">
-          Élève ingénieure en Électronique Embarquée & Télécoms (ESPRIT). 
-          Je conçois des systèmes IoT fiables, mêlant embarqué, IA et cloud.
+          Diplôme National d’Ingénieur en Génie électrique, spécialité Électronique Embarquée et
+          Télécommunications (EET), ESPRIM. Je conçois des systèmes connectés qui associent
+          embarqué, IoT, IA et logiciel, du capteur à l’application web.
         </p>
 
-        <div class="tags">
-          <span class="tag">IoT & ESP32</span>
-          <span class="tag">Raspberry&nbsp;Pi</span>
-          <span class="tag">Linux</span>
-          <span class="tag">OpenCV & Deep&nbsp;Learning</span>
-          <span class="tag">MQTT / Node.js</span>
-          <span class="tag">Firebase & Cloud</span>
-        </div>
+        <ul class="tags" aria-label="Domaines">
+          <li class="tag">Systèmes embarqués</li>
+          <li class="tag">IoT & ESP32</li>
+          <li class="tag">IA & Deep&nbsp;Learning</li>
+          <li class="tag">Applications web</li>
+          <li class="tag">DevOps / Docker</li>
+        </ul>
 
-        <!-- Boutons stylés en bas -->
-        <div class="statsButtons">
-          <a href="projets.html" class="btnPrimary">6+ Projets concrets</a>
-          <a href="certifications.html" class="btnGhost">5+ Certifications</a>
-          <a href="stages.html" class="btnGhost">6 Stages réalisés</a>
+        <div class="ctaRow">
+          <a class="btnPrimary" href="iqc.html">Projet phare : IQC chez LEONI</a>
+          <a class="btnGhost" href="projets.html">Tous les projets</a>
+          <a class="btnGhost" href="Aya_Soukii_CV.pdf" download>Télécharger mon CV (PDF)</a>
         </div>
-
       </div>
 
       <figure class="heroPhoto">
-        <img src="photo_aya.jpg" alt="Portrait professionnel d’Aya Soukii">
+        <img src="figures/photo_aya.jpg" width="210" height="210" alt="Portrait d’Aya Soukii">
       </figure>
     </section>
-  </div>
-        <!-- Section Contact -->
-    <section class="contactSection" id="contact">
-      <h2 class="contactTitle">Me Contacter</h2>
-      <p class="contactIntro">
-        N’hésite pas à me contacter via les moyens ci-dessous 👇
+
+    <section class="featured" aria-labelledby="iqc-title">
+      <span class="badge">Projet récent · LEONI Wiring Systems Tunisia</span>
+      <h2 id="iqc-title">Digitalisation du processus d’inspection à réception (IQC)</h2>
+      <p>
+        Application web de contrôle qualité à réception pour le service Qualité / Incoming Quality Control :
+        fiche de contrôle numérique, échantillonnage, mesures dimensionnelles, aide à l’inspection visuelle
+        et rapports d’inspection. Python · Django REST Framework · PostgreSQL · Angular 17 · Docker.
       </p>
+      <a class="btn" href="iqc.html">Voir la fiche projet</a>
+    </section>
+
+    <section aria-labelledby="apercu">
+      <h2 class="sectionTitle" id="apercu">Parcours en bref</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Formation</h3>
+          <p>Diplôme National d’Ingénieur, Génie électrique, spécialité Électronique Embarquée et Télécommunications (EET) — ESPRIM.</p>
+          <a class="btnGhost" href="competences.html">Compétences</a>
+        </article>
+        <article class="card">
+          <h3>Expériences</h3>
+          <p>Six stages et expériences en milieu industriel et télécoms, du câblage automobile à la recherche en Deep Learning.</p>
+          <a class="btnGhost" href="stages.html">Stages & expériences</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="contactSection" id="contact" aria-labelledby="contact-title">
+      <h2 class="contactTitle" id="contact-title">Me contacter</h2>
+      <p class="contactIntro">Un projet, une opportunité ou une question ? Écrivez-moi.</p>
 
       <div class="contactGrid">
         <div class="contactCard">
-          <h3>📧 Email</h3>
-          <p><a href="mailto:aya.souki@esprim.tn">aya.souki@esprim.tn</a></p>
+          <h3>Email</h3>
+          <p><a href="mailto:aya.souki700@gmail.com">aya.souki700@gmail.com</a></p>
         </div>
-
         <div class="contactCard">
-          <h3>📱 Téléphone</h3>
-          <p><a href="tel:+21628162710">+216&nbsp;28&nbsp;162&nbsp;710</a></p>
+          <h3>LinkedIn</h3>
+          <p><a href="https://www.linkedin.com/in/aya-souki-022b32219/" target="_blank" rel="noopener noreferrer">linkedin.com/in/aya-souki-022b32219</a></p>
         </div>
-
         <div class="contactCard">
-          <h3>🔗 LinkedIn</h3>
-          <p><a href="http://www.linkedin.com/in/aya-souki-022b32219" target="_blank">
-            linkedin.com/in/aya-souki-022b32219
-          </a></p>
+          <h3>GitHub</h3>
+          <p><a href="https://github.com/Ayasoukii" target="_blank" rel="noopener noreferrer">github.com/Ayasoukii</a></p>
         </div>
       </div>
 
-      <div class="contactCTA">
-        <a href="mailto:aya.souki@esprim.tn" class="btnPrimary">Envoyer un message</a>
-      </div>
+      <a href="mailto:aya.souki700@gmail.com" class="btnPrimary">Envoyer un message</a>
     </section>
+  </main>
 
+  <footer class="subFooter">© 2026 Aya Soukii — Portfolio</footer>
 </body>
 </html>

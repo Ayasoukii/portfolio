@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pipeline CI/CD d’une application Java Spring MVC avec Jenkins, Docker Compose et MySQL : build Maven, dockerisation et déploiement automatisé.">
+  <link rel="canonical" href="https://ayasoukii.github.io/portfolio/devops.html">
+  <meta name="theme-color" content="#4338ca">
+  <title>DevOps CI/CD – Aya Soukii</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <a class="skip-link" href="#main">Aller au contenu</a>
+  <nav class="navbar" aria-label="Navigation principale">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Aya Soukii</a>
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="projets.html" aria-current="page">Projets</a>
+        <a href="stages.html">Stages</a>
+        <a href="competences.html">Compétences</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main" class="container doc">
+<p class="breadcrumb"><a href="projets.html">← Projets</a></p>
+    <h1 class="pageTitle" style="text-align:left">Projet DevOps – CI/CD Java avec Jenkins & Docker</h1>
+
+    <img src="figures/devops_pipeline.jpg" alt="Pipeline CI/CD Java" class="heroFigure" loading="lazy">
+
+    <section>
+      <h2>Objectif</h2>
+      <p>
+        Mise en place d’un pipeline CI/CD complet pour une application <strong>Java Spring MVC</strong> packagée en WAR, automatisant :
+      </p>
+      <ul>
+        <li>le <strong>build Maven</strong></li>
+        <li>la <strong>dockerisation</strong></li>
+        <li>le <strong>déploiement</strong> sur des machines virtuelles à l’aide de Docker Compose</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Fonctionnalités mises en œuvre</h2>
+      <ul>
+        <li><strong>CI/CD :</strong> Jenkins Pipeline (checkout, build, création image Docker, déploiement Docker Compose)</li>
+        <li><strong>Déclenchements :</strong> Webhook GitHub + exécution périodique (cron)</li>
+        <li><strong>Base de données :</strong> MySQL</li>
+        <li><strong>Fonction clé :</strong> Insertion automatique d’employés fictifs toutes les 30 secondes</li>
+        <li><strong>Monitoring :</strong> <code>docker stats</code></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Technologies & outils</h2>
+      <ul>
+        <li>Java, Spring MVC, Maven</li>
+        <li>Jenkins, Docker, Docker Compose</li>
+        <li>Tomcat, MySQL</li>
+        <li>Linux (Ubuntu Server), GitHub</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Code source</h2>
+      <p>
+        Le code du projet est disponible sur GitHub :
+        <br>
+        <a href="https://github.com/Ayasoukii/java-web-app-docker" target="_blank" rel="noopener">
+          github.com/Ayasoukii/java-web-app-docker
+        </a>
+      </p>
+    </section>
+
+    <section>
+      <h2>Télécharger le rapport du projet</h2>
+      <a href="docs/rapport_devops_pipeline.pdf" download class="btn">
+        Télécharger le PDF
+      </a>
+    </section>
+
+    <p><a href="projets.html" class="btnGhost">← Retour aux projets</a></p>
+  </main>
+  <footer class="subFooter">© 2026 Aya Soukii — Portfolio</footer>
+</body>
+</html>
