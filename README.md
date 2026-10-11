@@ -1,4 +1,4 @@
-# Portfolio — Aya Soukii
+# Portfolio — Aya Souki
 
 Portfolio statique (HTML/CSS, sans build) d'une ingénieure en Électronique Embarquée et Télécommunications : systèmes embarqués, IoT, IA, applications web et DevOps.
 
