@@ -14,6 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Aller au contenu</a>
@@ -34,18 +35,29 @@
     <h1 class="pageTitle">Compétences</h1>
     <div class="skills-block">
       <div class="skills-list">
-        <div class="skills-category"><h2>Langages</h2><p>Python, C/C++, TypeScript, JavaScript, VHDL, HTML/CSS, Node.js</p></div>
-        <div class="skills-category"><h2>Web & backend</h2><p>Django, Django REST Framework, Angular, RxJS, REST API, Celery, Redis, Nginx</p></div>
-        <div class="skills-category"><h2>Outils & plateformes</h2><p>Raspberry Pi, ESP32, Arduino, STM32, MATLAB, LabVIEW, Git/GitHub, Docker, Jenkins, Visual Studio Code, Jupyter Notebook</p></div>
-        <div class="skills-category"><h2>IA & vision</h2><p>OpenCV, TensorFlow/Keras, PyTorch, Scikit-Learn, Deep Learning, Computer Vision, CNN, Data Augmentation</p></div>
-        <div class="skills-category"><h2>Bases de données</h2><p>PostgreSQL, MySQL, MongoDB, Firebase</p></div>
-        <div class="skills-category"><h2>IoT & réseaux</h2><p>MQTT, Node-RED, Wi-Fi/Bluetooth, communication série (UART, I2C, SPI)</p></div>
-        <div class="skills-category"><h2>Systèmes embarqués</h2><p>Conception, capteurs et actionneurs, traitement du signal, temps réel, microcontrôleurs ARM</p></div>
-        <div class="skills-category"><h2>Savoir-être</h2><p>Esprit d’analyse, travail en équipe, autonomie, gestion du temps, communication technique, créativité</p></div>
+        <div class="skills-category"><h2>Langages</h2><ul class="chips"><li>Python</li><li>C/C++</li><li>TypeScript</li><li>JavaScript</li><li>VHDL</li><li>HTML/CSS</li><li>Node.js</li></ul></div>
+        <div class="skills-category"><h2>Web & backend</h2><ul class="chips"><li>Django</li><li>Django REST Framework</li><li>Angular</li><li>RxJS</li><li>REST API</li><li>Celery</li><li>Redis</li><li>Nginx</li></ul></div>
+        <div class="skills-category"><h2>Outils & plateformes</h2><ul class="chips"><li>Raspberry Pi</li><li>ESP32</li><li>Arduino</li><li>STM32</li><li>MATLAB</li><li>LabVIEW</li><li>Git/GitHub</li><li>Docker</li><li>Jenkins</li><li>Visual Studio Code</li><li>Jupyter Notebook</li></ul></div>
+        <div class="skills-category"><h2>IA & vision</h2><ul class="chips"><li>OpenCV</li><li>TensorFlow/Keras</li><li>PyTorch</li><li>Scikit-Learn</li><li>Deep Learning</li><li>Computer Vision</li><li>CNN</li><li>Data Augmentation</li></ul></div>
+        <div class="skills-category"><h2>Bases de données</h2><ul class="chips"><li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li><li>Firebase</li></ul></div>
+        <div class="skills-category"><h2>IoT & réseaux</h2><ul class="chips"><li>MQTT</li><li>Node-RED</li><li>Wi-Fi/Bluetooth</li><li>Communication série (UART, I2C, SPI)</li></ul></div>
+        <div class="skills-category"><h2>Systèmes embarqués</h2><ul class="chips"><li>Conception</li><li>Capteurs et actionneurs</li><li>Traitement du signal</li><li>Temps réel</li><li>Microcontrôleurs ARM</li></ul></div>
+        <div class="skills-category"><h2>Savoir-être</h2><ul class="chips"><li>Esprit d’analyse</li><li>Travail en équipe</li><li>Autonomie</li><li>Gestion du temps</li><li>Communication technique</li><li>Créativité</li></ul></div>
       </div>
     </div>
     <p class="subFooter"><a href="index.html" class="btnGhost">← Retour à l’accueil</a></p>
   </main>
-  <footer class="subFooter">© 2026 Aya Souki — Portfolio</footer>
+  <footer class="siteFooter">
+    <div class="inner">
+      <span><span class="footBrand">Aya Souki</span> · Ingénieure en Électronique Embarquée &amp; Télécommunications · © 2026</span>
+      <nav aria-label="Liens de contact">
+        <a href="mailto:aya.souki700@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/aya-souki-022b32219/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/Ayasoukii" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="Aya_Souki_CV.pdf" download>CV (PDF)</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="main.js" defer></script>
 </body>
 </html>

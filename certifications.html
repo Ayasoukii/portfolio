@@ -14,6 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Aller au contenu</a>
@@ -34,24 +35,26 @@
     <h1 class="pageTitle">Certifications & formations</h1>
     <div class="grid">
       <article class="card">
-        <img loading="lazy" src="siemens_certificate.jpg" alt="Certificat de formation Siemens">
+        <img class="certImg" loading="lazy" src="figures/siemens_certificate.jpg" alt="Certificat de formation Siemens">
         <h2 style="font-size:17px">Formation Siemens — Industrie 4.0</h2>
         <p><strong>Organisme :</strong> Siemens</p>
         <p>Automatisation avancée, intégration de systèmes, processus industriels intelligents.</p>
       </article>
       <article class="card">
-        <img loading="lazy" src="ros_certificate.jpg" alt="Certificat Foundation Code for ROS">
+        <img class="certImg" loading="lazy" src="figures/ros_certificate.jpg" alt="Certificat Foundation Code for ROS">
         <h2 style="font-size:17px">Foundation Code for ROS</h2>
         <p><strong>Organisme :</strong> The Construct</p>
         <p>Développement robotique avec ROS, Linux et Python.</p>
       </article>
       <article class="card">
+        <img class="certImg" loading="lazy" src="figures/deep_learning_certificate.jpg" alt="Certificat NVIDIA Getting Started with Deep Learning">
         <h2 style="font-size:17px">Getting Started with Deep Learning</h2>
         <p><strong>Organisme :</strong> NVIDIA</p>
         <p>Fondamentaux du Deep Learning, CNN et entraînement de modèles.</p>
         <a class="btnGhost" href="certif%20DL.pdf" target="_blank" rel="noopener">Voir le certificat (PDF)</a>
       </article>
       <article class="card">
+        <img class="certImg" loading="lazy" src="figures/ai_predictive_maintenance.jpg" alt="Certificat NVIDIA Applications of AI for Predictive Maintenance">
         <h2 style="font-size:17px">Applications of AI for Predictive Maintenance</h2>
         <p><strong>Organisme :</strong> NVIDIA</p>
         <p>Cas d’usage industriels, analyse de données en temps réel.</p>
@@ -66,6 +69,17 @@
     </div>
     <p class="subFooter"><a href="index.html" class="btnGhost">← Retour à l’accueil</a></p>
   </main>
-  <footer class="subFooter">© 2026 Aya Souki — Portfolio</footer>
+  <footer class="siteFooter">
+    <div class="inner">
+      <span><span class="footBrand">Aya Souki</span> · Ingénieure en Électronique Embarquée &amp; Télécommunications · © 2026</span>
+      <nav aria-label="Liens de contact">
+        <a href="mailto:aya.souki700@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/aya-souki-022b32219/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/Ayasoukii" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="Aya_Souki_CV.pdf" download>CV (PDF)</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="main.js" defer></script>
 </body>
 </html>
