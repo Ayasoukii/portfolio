@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Digitalisation de l’inspection à réception (IQC) — Aya Souki</title>
-  <meta name="description" content="Fiche projet : application web de contrôle qualité à réception (IQC) réalisée chez LEONI Wiring Systems Tunisia — Django REST Framework, PostgreSQL, Angular 17, Docker.">
+  <meta name="description" content="Projet de fin d’études chez LEONI Wiring Systems Tunisia : application web de contrôle qualité à réception (IQC) avec aide à l’inspection par IA — gain de 97 k€. Django REST Framework, Angular 17, PostgreSQL, Celery, Docker.">
   <link rel="canonical" href="https://ayasoukii.github.io/portfolio/iqc.html">
   <meta property="og:title" content="Digitalisation du processus d’inspection à réception (IQC)">
-  <meta property="og:description" content="Application web de contrôle qualité à réception, LEONI Wiring Systems Tunisia — Django, Angular 17, PostgreSQL, Docker.">
+  <meta property="og:description" content="PFE chez LEONI Wiring Systems Tunisia : application web de contrôle qualité à réception, gain de 97 k€ — Django, Angular 17, PostgreSQL, Docker.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://ayasoukii.github.io/portfolio/iqc.html">
   <meta name="theme-color" content="#4338ca">
@@ -36,15 +36,28 @@
   <main id="main" class="container">
     <article class="doc">
       <p class="breadcrumb"><a href="projets.html">← Projets</a></p>
+      <span class="badge">Projet de fin d’études · LEONI Wiring Systems Tunisia</span>
       <h1 class="pageTitle" style="text-align:left">Digitalisation du processus d’inspection à réception (IQC)</h1>
-      <p>Application web pour numériser et guider le contrôle qualité des composants à leur réception, réalisée au sein du service Qualité / Incoming Quality Control de LEONI Wiring Systems Tunisia.</p>
+      <p>
+        Application web qui numérise et guide le contrôle qualité des composants à leur réception :
+        de la fiche de contrôle papier à un parcours d’inspection guidé, assisté par l’IA et tracé de bout en bout.
+        Conçue et développée pendant mon stage de fin d’études au sein du service Qualité / Incoming Quality Control.
+      </p>
+
+      <ul class="kpis" aria-label="Chiffres clés">
+        <li class="kpi"><strong>97 k€</strong><span>de gain apporté par l’application</span></li>
+        <li class="kpi"><strong>5 mois</strong><span>de stage, février – juin 2026</span></li>
+        <li class="kpi"><strong>7 étapes</strong><span>du processus d’inspection numérisées</span></li>
+        <li class="kpi"><strong>3 rôles</strong><span>inspecteur, administrateur, super-administrateur</span></li>
+      </ul>
 
       <dl class="meta">
         <div><dt>Entreprise</dt><dd>LEONI Wiring Systems Tunisia</dd></div>
         <div><dt>Service</dt><dd>Qualité / Incoming Quality Control</dd></div>
-        <div><dt>Formation</dt><dd>Diplôme National d’Ingénieur, Génie électrique, Électronique Embarquée et Télécommunications (EET), ESPRIM</dd></div>
-        <div><dt>Type</dt><dd>Application web full-stack avec aide à l’inspection par IA</dd></div>
-        <div><dt>Gain</dt><dd><strong>97 k€</strong> apporté par l’application</dd></div>
+        <div><dt>Lieu</dt><dd>Menzel Hayet, Monastir</dd></div>
+        <div><dt>Période</dt><dd>Février – juin 2026</dd></div>
+        <div><dt>Mon rôle</dt><dd>Conception et développement full-stack</dd></div>
+        <div><dt>Formation</dt><dd>Diplôme National d’Ingénieur, Génie électrique (EET), ESPRIM</dd></div>
       </dl>
 
       <div class="notice" role="note">
@@ -59,13 +72,20 @@
         <p>
           À réception, un inspecteur contrôle des composants de faisceaux électriques selon une fiche de contrôle
           propre à chaque référence : caractéristiques à vérifier, moyens de mesure, tolérances et défauts connus.
-          Cette fiche existait sous forme papier. L’objectif du projet est de la numériser, de guider l’inspecteur
-          et de produire automatiquement les rapports d’inspection avec une traçabilité complète.
+          Cette fiche existait sous forme papier, ce qui rendait la saisie, le calcul des échantillons et la production
+          des rapports manuels, et la traçabilité difficile.
         </p>
+        <h3>Objectifs</h3>
+        <ul>
+          <li>Numériser les fiches de contrôle et les relier aux références articles.</li>
+          <li>Guider l’inspecteur étape par étape, de l’échantillonnage au verdict.</li>
+          <li>Générer automatiquement les rapports d’inspection.</li>
+          <li>Garantir une traçabilité complète des décisions et des actions sensibles.</li>
+        </ul>
       </section>
 
       <section>
-        <h2>Solution</h2>
+        <h2>Déroulement d’une inspection</h2>
         <ol class="flow" aria-label="Déroulement d’une inspection">
           <li>Réception et référence article</li>
           <li>Fiche de contrôle associée</li>
@@ -79,15 +99,24 @@
 
       <section>
         <h2>Fonctionnalités</h2>
-        <ul>
-          <li><strong>Informations de réception et références articles :</strong> chaque référence est reliée à une annexe qui définit la logique de contrôle (caractéristiques, moyens de mesure, tolérances).</li>
-          <li><strong>Échantillonnage :</strong> taille d’échantillon d’un lot déterminée par une table AQL, avec des réglages propres à certaines annexes.</li>
-          <li><strong>Contrôles dimensionnels :</strong> saisie manuelle des mesures ou lecture depuis un micromètre USB.</li>
-          <li><strong>Inspection visuelle assistée :</strong> photos du composant sur plusieurs faces, analyse visuelle et lecture du marquage par OCR, avec comparaison à l’attendu.</li>
-          <li><strong>Rapports d’inspection :</strong> export Excel et PDF.</li>
-          <li><strong>Traçabilité :</strong> journal d’audit des actions sensibles.</li>
-          <li><strong>Accès par rôles :</strong> inspecteur, administrateur et super-administrateur, vérifiés côté serveur.</li>
-        </ul>
+        <div class="grid">
+          <div class="card">
+            <h3>Préparer l’inspection</h3>
+            <p>Chaque référence article est reliée à une annexe qui définit la logique de contrôle : caractéristiques, moyens de mesure et tolérances. La taille d’échantillon d’un lot est déterminée par une table <strong>AQL</strong>, avec des réglages propres à certaines annexes.</p>
+          </div>
+          <div class="card">
+            <h3>Mesurer</h3>
+            <p>Contrôles dimensionnels par saisie manuelle ou par lecture directe depuis un <strong>micromètre USB</strong>, comparés automatiquement aux tolérances de la fiche.</p>
+          </div>
+          <div class="card">
+            <h3>Inspecter visuellement</h3>
+            <p>Photos du composant sur plusieurs faces, analyse visuelle par IA et lecture du marquage par <strong>OCR</strong>, avec comparaison à l’attendu.</p>
+          </div>
+          <div class="card">
+            <h3>Tracer et rapporter</h3>
+            <p>Rapports d’inspection exportés en <strong>Excel</strong> et <strong>PDF</strong>, journal d’audit des actions sensibles et accès par rôles vérifiés côté serveur.</p>
+          </div>
+        </div>
       </section>
 
       <section>
@@ -106,6 +135,54 @@
 
       <section>
         <h2>Architecture</h2>
+        <figure class="archFig">
+          <svg viewBox="0 0 360 440" role="img" aria-labelledby="archTitle archDesc">
+            <title id="archTitle">Architecture de l’application IQC</title>
+            <desc id="archDesc">L’inspecteur utilise le frontend Angular servi par Nginx, qui appelle l’API Django REST. L’API stocke les données dans PostgreSQL et confie l’analyse d’images à un worker Celery via Redis ; le worker enregistre le verdict IA dans PostgreSQL. Tous les services tournent sous Docker Compose.</desc>
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0 0L10 5L0 10z" fill="#6366f1"/>
+              </marker>
+            </defs>
+            <rect x="6" y="80" width="348" height="352" rx="14" fill="none" stroke="#a5b4fc" stroke-dasharray="6 5"/>
+            <text x="180" y="424" text-anchor="middle" font-family="Roboto,system-ui,sans-serif" font-size="11" fill="#4b5563">Docker Compose</text>
+
+            <g><rect fill="#fff" stroke="#c7d2fe" stroke-width="1.5" x="60" y="10" width="240" height="54" rx="10"/>
+              <text x="180" y="33" text-anchor="middle" font-family="Poppins,system-ui,sans-serif" font-size="14" font-weight="600" fill="#1a202c">Inspecteur</text>
+              <text x="180" y="51" text-anchor="middle" font-family="Roboto,system-ui,sans-serif" font-size="12" fill="#4b5563">Navigateur · micromètre USB · photos</text></g>
+            <line x1="180" y1="64" x2="180" y2="94" fill="none" stroke="#6366f1" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+            <g><rect fill="#fff" stroke="#c7d2fe" stroke-width="1.5" x="60" y="96" width="240" height="54" rx="10"/>
+              <text x="180" y="119" text-anchor="middle" font-family="Poppins,system-ui,sans-serif" font-size="14" font-weight="600" fill="#1a202c">Frontend Angular 17</text>
+              <text x="180" y="137" text-anchor="middle" font-family="Roboto,system-ui,sans-serif" font-size="12" fill="#4b5563">TypeScript · RxJS · servi par Nginx</text></g>
+            <line x1="180" y1="150" x2="180" y2="178" fill="none" stroke="#6366f1" stroke-width="1.6" marker-end="url(#arrow)"/>
+            <text x="190" y="168" font-family="Roboto,system-ui,sans-serif" font-size="11" fill="#4b5563">REST · JWT (cookie HttpOnly)</text>
+
+            <g><rect fill="#eef2ff" stroke="#4338ca" stroke-width="1.5" x="60" y="180" width="240" height="54" rx="10"/>
+              <text x="180" y="203" text-anchor="middle" font-family="Poppins,system-ui,sans-serif" font-size="14" font-weight="600" fill="#1a202c">API Django REST Framework</text>
+              <text x="180" y="221" text-anchor="middle" font-family="Roboto,system-ui,sans-serif" font-size="12" fill="#4b5563">Gunicorn · rôles · journal d’audit</text></g>
+
+            <path d="M180 234V250H95V270" fill="none" stroke="#6366f1" stroke-width="1.6" marker-end="url(#arrow)"/>
+            <path d="M180 250H265V270" fill="none" stroke="#6366f1" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+            <g><rect fill="#fff" stroke="#c7d2fe" stroke-width="1.5" x="16" y="272" width="158" height="54" rx="10"/>
+              <text x="95" y="295" text-anchor="middle" font-family="Poppins,system-ui,sans-serif" font-size="14" font-weight="600" fill="#1a202c">PostgreSQL</text>
+              <text x="95" y="313" text-anchor="middle" font-family="Roboto,system-ui,sans-serif" font-size="12" fill="#4b5563">données · rapports · audit</text></g>
+
+            <g><rect fill="#fff" stroke="#c7d2fe" stroke-width="1.5" x="186" y="272" width="158" height="54" rx="10"/>
+              <text x="265" y="295" text-anchor="middle" font-family="Poppins,system-ui,sans-serif" font-size="14" font-weight="600" fill="#1a202c">Redis</text>
+              <text x="265" y="313" text-anchor="middle" font-family="Roboto,system-ui,sans-serif" font-size="12" fill="#4b5563">file de tâches</text></g>
+            <line x1="265" y1="326" x2="265" y2="342" fill="none" stroke="#6366f1" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+            <g><rect fill="#fff" stroke="#c7d2fe" stroke-width="1.5" x="186" y="344" width="158" height="64" rx="10"/>
+              <text x="265" y="365" text-anchor="middle" font-family="Poppins,system-ui,sans-serif" font-size="14" font-weight="600" fill="#1a202c">Worker Celery</text>
+              <text x="265" y="382" text-anchor="middle" font-family="Roboto,system-ui,sans-serif" font-size="11" fill="#4b5563">Vision : OpenCLIP, DINOv2,</text>
+              <text x="265" y="398" text-anchor="middle" font-family="Roboto,system-ui,sans-serif" font-size="11" fill="#4b5563">PatchCore · OCR : PaddleOCR</text></g>
+            <path d="M186 376H95V328" fill="none" stroke="#6366f1" stroke-width="1.6" marker-end="url(#arrow)"/>
+            <text x="102" y="368" font-family="Roboto,system-ui,sans-serif" font-size="11" fill="#4b5563">verdict IA</text>
+          </svg>
+          <figcaption>Vue d’ensemble des services : l’analyse d’images tourne en tâche de fond pour ne pas bloquer l’inspecteur.</figcaption>
+        </figure>
         <ul>
           <li>Interface <strong>Angular 17</strong> (TypeScript, RxJS), servie derrière <strong>Nginx</strong>.</li>
           <li>API <strong>Django</strong> / <strong>Django REST Framework</strong> (Python), exécutée avec Gunicorn.</li>
@@ -133,6 +210,16 @@
       </section>
 
       <section>
+        <h2>Résultats</h2>
+        <ul>
+          <li><strong>Gain de 97 k€</strong> apporté par l’application.</li>
+          <li>Fiche de contrôle papier remplacée par un parcours d’inspection numérique et guidé.</li>
+          <li>Rapports d’inspection générés automatiquement en Excel et PDF.</li>
+          <li>Décisions tracées : verdict IA et décision de l’inspecteur conservés séparément, actions sensibles journalisées.</li>
+        </ul>
+      </section>
+
+      <section>
         <h2>Ce que j’ai appris</h2>
         <ul>
           <li>Modéliser un processus qualité industriel en API REST et en base relationnelle.</li>
@@ -141,7 +228,11 @@
         </ul>
       </section>
 
-      <p><a class="btn" href="projets.html">← Retour aux projets</a></p>
+      <p class="ctaRow">
+        <a class="btn" href="projets.html">← Retour aux projets</a>
+        <a class="btnGhost" href="stages.html">Voir mes stages</a>
+        <a class="btnGhost" href="Aya_Souki_CV.pdf" download>Télécharger mon CV (PDF)</a>
+      </p>
     </article>
   </main>
 
