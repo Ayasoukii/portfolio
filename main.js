@@ -87,8 +87,8 @@
 
   /* ---------- Apparition au défilement ---------- */
   var revealSelector = [
-    '.card', '.stat', '.kpi', '.skills-category', '.featured', '.sectionTitle', '.meta',
-    '.contactSection', '.heroFigure', '.archFig', '.table-wrap', '.flow', '.notice'
+    '.card', '.kpi', '.xpItem', '.tItem', '.skillCard', '.flagship', '.feature', '.meta',
+    '.archFig', '.pipeline', '.contactBlock', '.coverFigure', '.figGrid', '.table-wrap', '.sectionHead'
   ].join(',');
   var targets = Array.prototype.slice.call(document.querySelectorAll(revealSelector));
 
@@ -132,18 +132,4 @@
     }, { threshold: 0.6 });
     counters.forEach(function (el) { co.observe(el); });
   }
-
-  /* ---------- Filtres de projets : petite animation ---------- */
-  document.querySelectorAll('.filters button').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      if (reduceMotion) return;
-      document.querySelectorAll('#projects .card').forEach(function (card) {
-        if (card.hidden) return;
-        card.classList.add('is-in');
-        card.classList.remove('is-filtering');
-        void card.offsetWidth;
-        card.classList.add('is-filtering');
-      });
-    });
-  });
 })();
