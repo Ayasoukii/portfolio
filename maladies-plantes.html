@@ -3,100 +3,95 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Détection des maladies des plantes — Aya Souki</title>
-  <meta name="description" content="Étude de cas : détection des maladies des plantes par Deep Learning (CNN TensorFlow/Keras) et diagnostic embarqué sur Raspberry Pi avec caméra.">
-  <meta name="author" content="Aya Souki">
+  <meta name="description" content="Détection de maladies de plantes par Deep Learning (CNN TensorFlow/Keras) sur images de feuilles, déployée sur Raspberry Pi.">
   <link rel="canonical" href="https://ayasoukii.github.io/portfolio/maladies-plantes.html">
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="Aya Souki — Portfolio">
-  <meta property="og:locale" content="fr_FR">
-  <meta property="og:title" content="Détection des maladies des plantes — Aya Souki">
-  <meta property="og:description" content="Étude de cas : détection des maladies des plantes par Deep Learning (CNN TensorFlow/Keras) et diagnostic embarqué sur Raspberry Pi avec caméra.">
-  <meta property="og:url" content="https://ayasoukii.github.io/portfolio/maladies-plantes.html">
-  <meta property="og:image" content="https://ayasoukii.github.io/portfolio/figures/photo_aya_og.jpg">
-  <meta property="og:image:alt" content="Portrait d’Aya Souki">
-  <meta name="twitter:card" content="summary">
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0b1120" media="(prefers-color-scheme: dark)">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#4338ca">
+  <title>Détection des maladies des plantes – Aya Souki</title>
   <link rel="stylesheet" href="styles.css">
   <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <a class="skip-link" href="#main">Aller au contenu</a>
-  <header class="navbar">
-    <nav class="nav-container" aria-label="Navigation principale">
-      <a href="index.html" class="nav-logo"><span class="mark" aria-hidden="true">AS</span>Aya Souki</a>
+
+    <a class="skip-link" href="#main">Aller au contenu</a>
+  <nav class="navbar" aria-label="Navigation principale">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Aya Souki</a>
       <div class="nav-links">
         <a href="index.html">Accueil</a>
         <a href="projets.html" aria-current="page">Projets</a>
-        <a href="stages.html">Expérience</a>
+        <a href="stages.html">Stages</a>
         <a href="competences.html">Compétences</a>
         <a href="certifications.html">Certifications</a>
         <a href="contact.html">Contact</a>
-        <a class="navCta" href="Aya_Souki_CV.pdf" download>CV (PDF)</a>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
 
-  <main id="main">
-    <article class="doc">
-      <header class="docHeader">
-        <p class="breadcrumb"><a href="projets.html">← Tous les projets</a></p>
-        <span class="badge">Vision par ordinateur · PFE Licence</span>
-        <h1>Détection des maladies des plantes par Deep Learning</h1>
-        <p class="docLead">Un modèle de classification d’images de feuilles déployé sur Raspberry Pi pour un diagnostic sur le terrain.</p>
-        <dl class="meta"><div><dt>Type</dt><dd>Projet de fin d’études (Licence)</dd></div><div><dt>Laboratoire</dt><dd>LEM, Faculté des Sciences de Monastir</dd></div><div><dt>Période</dt><dd>Février – mai 2023</dd></div><div><dt>Matériel</dt><dd>Raspberry Pi, caméra</dd></div></dl>
-      </header>
+  <main id="main" class="container doc">
+<p class="breadcrumb"><a href="projets.html">← Projets</a></p>
+    <h1 class="pageTitle" style="text-align:left">Détection des maladies des plantes par Deep Learning</h1>
 
-      <section aria-labelledby="ctx">
-        <h2 id="ctx">Contexte et objectif</h2>
-        <p>Concevoir un système de détection et de reconnaissance des maladies des plantes à partir d’images de feuilles, pour aider les agriculteurs à poser un diagnostic rapide et à prévenir la propagation.</p>
-        <p>Projet de fin d’études de Licence, réalisé au Laboratoire d’Électronique et de Microélectronique de la Faculté des Sciences de Monastir (février – mai 2023).</p>
-      </section>
+    <img width="456" height="292" src="figures/plantes.webp" alt="Feuille malade détectée" class="heroFigure" loading="lazy">
 
-      <section aria-labelledby="arch">
-        <h2 id="arch">Architecture de la solution</h2>
-        <ol class="pipeline" aria-label="Chaîne de traitement"><li><strong>Dataset</strong><span>Images de feuilles saines et malades (Kaggle)</span></li><li><strong>Prétraitement</strong><span>Redimensionnement, normalisation, filtrage</span></li><li><strong>Modèle CNN</strong><span>TensorFlow/Keras sur Google Colab</span></li><li><strong>Embarqué</strong><span>Raspberry Pi et caméra USB</span></li><li><strong>Diagnostic</strong><span>Résultat affiché sur écran LCD</span></li></ol>
-        <figure><img src="figures/plantes.webp" width="456" height="292" alt="Prototype sur Raspberry Pi avec écran pour le diagnostic des maladies" loading="lazy" decoding="async" style="margin:0 auto;border-radius:12px;border:1px solid var(--line)"><figcaption>Prototype de diagnostic sur Raspberry Pi.</figcaption></figure>
-      </section>
+    <section>
+      <h2>Objectif du projet</h2>
+      <p>
+        Concevoir un système intelligent de détection et de reconnaissance des maladies des plantes à partir d’images de feuilles. L'objectif est d'automatiser l'identification des maladies pour assister les agriculteurs dans le diagnostic rapide et la prévention.
+      </p>
+    </section>
 
-      <section aria-labelledby="steps">
-        <h2 id="steps">Méthodologie</h2>
-        <ul>
-          <li>Collecte et préparation d’un dataset d’images de feuilles (malades et saines).</li>
-          <li>Prétraitement des images : redimensionnement, normalisation, filtrage, augmentation de données.</li>
-          <li>Entraînement d’un CNN avec TensorFlow/Keras.</li>
-          <li>Évaluation : matrice de confusion, accuracy, validation croisée.</li>
-          <li>Déploiement sur Raspberry Pi avec caméra et affichage du diagnostic.</li>
-        </ul>
-      </section>
+    <section>
+      <h2>Méthodologie</h2>
+      <ul>
+        <li>Collecte et préparation d’un dataset d’images de feuilles (malades et saines)</li>
+        <li>Prétraitement des images (redimensionnement, normalisation, filtrage)</li>
+        <li>Entraînement d’un modèle CNN avec TensorFlow/Keras</li>
+        <li>Évaluation du modèle : matrice de confusion, accuracy, validation croisée</li>
+        <li>Déploiement sur Raspberry Pi avec caméra et affichage du diagnostic</li>
+      </ul>
+    </section>
 
-      <section aria-labelledby="stack">
-        <h2 id="stack">Stack technique</h2>
-        <div class="table-wrap"><table class="stack"><tbody><tr><th scope="row">Modèle</th><td>Python, TensorFlow, Keras, OpenCV</td></tr><tr><th scope="row">Entraînement</th><td>Google Colab</td></tr><tr><th scope="row">Matériel</th><td>Raspberry Pi, caméra USB, écran LCD</td></tr></tbody></table></div>
-      </section>
+    <section>
+      <h2>Technologies & outils</h2>
+      <ul>
+        <li>Python, TensorFlow, Keras, OpenCV</li>
+        <li>Google Colab (modèle)</li>
+        <li>Raspberry Pi, caméra USB, écran LCD</li>
+      </ul>
+    </section>
 
-      <section aria-labelledby="res">
-        <h2 id="res">Résultats</h2>
-        <ul>
-          <li>Précision satisfaisante sur plusieurs classes de maladies.</li>
-          <li>Inférence possible sur un matériel à faible consommation.</li>
-          <li>Utilisation envisageable en serre ou en exploitation agricole.</li>
-        </ul>
-      </section>
-      <footer class="docFoot">
-        <a class="btnGhost" href="projets.html">← Retour aux projets</a>
-        <span class="ctaRow" style="margin:0"><a class="btnGhost" href="https://www.canva.com/design/DAFiVbEXsG8/UEjbALXIrBIdjD3qxk3DeA/view" target="_blank" rel="noopener noreferrer">Présentation (Canva)</a><a class="btn" href="docs/Rapport_PFE.pdf" download>Rapport (PDF)</a></span>
-      </footer>
-    </article>
+    <section>
+      <h2>Résultats</h2>
+      <ul>
+        <li>Précision satisfaisante sur plusieurs classes de maladies</li>
+        <li>Capacité d'inférence sur matériel à faible consommation</li>
+        <li>Utilisation terrain envisageable dans des serres ou exploitations agricoles</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Présentation du projet</h2>
+      <p>
+        Présentation complète sur Canva :
+      </p>
+      <a href="https://www.canva.com/design/DAFiVbEXsG8/UEjbALXIrBIdjD3qxk3DeA/view?utm_content=DAFiVbEXsG8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h21ad3e6db4" target="_blank" rel="noopener" class="btn">
+        Voir la présentation Canva
+      </a>
+    </section>
+
+    <section>
+      <h2>Télécharger le rapport</h2>
+      <a href="docs/Rapport_PFE.pdf" download class="btn">
+        Télécharger le rapport PDF
+      </a>
+    </section>
+
+    <p><a href="projets.html" class="btnGhost">← Retour aux projets</a></p>
   </main>
   <footer class="siteFooter">
     <div class="inner">
-      <span><span class="footBrand">Aya Souki</span> · Ingénieure en génie électrique — Électronique embarquée &amp; télécommunications · © 2026</span>
+      <span><span class="footBrand">Aya Souki</span> · Ingénieure en Électronique Embarquée &amp; Télécommunications · © 2026</span>
       <nav aria-label="Liens de contact">
         <a href="mailto:aya.souki700@gmail.com">Email</a>
         <a href="https://www.linkedin.com/in/aya-souki-022b32219/" target="_blank" rel="noopener noreferrer">LinkedIn</a>

@@ -3,113 +3,107 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Reconnaissance d’émotions sur STM32 — Aya Souki</title>
-  <meta name="description" content="Étude de cas : CNN entraîné sur le dataset FER et déployé sur STM32F746G-DISCO avec X-CUBE-AI, environ 68 % d’accuracy, affichage UART et LCD.">
-  <meta name="author" content="Aya Souki">
+  <meta name="description" content="Reconnaissance d’émotions faciales par CNN déployé sur microcontrôleur STM32 avec STM32Cube.AI : dataset FER, entraînement, inférence embarquée.">
   <link rel="canonical" href="https://ayasoukii.github.io/portfolio/emotion-ia.html">
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="Aya Souki — Portfolio">
-  <meta property="og:locale" content="fr_FR">
-  <meta property="og:title" content="Reconnaissance d’émotions sur STM32 — Aya Souki">
-  <meta property="og:description" content="Étude de cas : CNN entraîné sur le dataset FER et déployé sur STM32F746G-DISCO avec X-CUBE-AI, environ 68 % d’accuracy, affichage UART et LCD.">
-  <meta property="og:url" content="https://ayasoukii.github.io/portfolio/emotion-ia.html">
-  <meta property="og:image" content="https://ayasoukii.github.io/portfolio/figures/photo_aya_og.jpg">
-  <meta property="og:image:alt" content="Portrait d’Aya Souki">
-  <meta name="twitter:card" content="summary">
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0b1120" media="(prefers-color-scheme: dark)">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#4338ca">
+  <title>Détection d’émotions – Aya Souki</title>
   <link rel="stylesheet" href="styles.css">
   <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <a class="skip-link" href="#main">Aller au contenu</a>
-  <header class="navbar">
-    <nav class="nav-container" aria-label="Navigation principale">
-      <a href="index.html" class="nav-logo"><span class="mark" aria-hidden="true">AS</span>Aya Souki</a>
+
+    <a class="skip-link" href="#main">Aller au contenu</a>
+  <nav class="navbar" aria-label="Navigation principale">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Aya Souki</a>
       <div class="nav-links">
         <a href="index.html">Accueil</a>
         <a href="projets.html" aria-current="page">Projets</a>
-        <a href="stages.html">Expérience</a>
+        <a href="stages.html">Stages</a>
         <a href="competences.html">Compétences</a>
         <a href="certifications.html">Certifications</a>
         <a href="contact.html">Contact</a>
-        <a class="navCta" href="Aya_Souki_CV.pdf" download>CV (PDF)</a>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
 
-  <main id="main">
-    <article class="doc">
-      <header class="docHeader">
-        <p class="breadcrumb"><a href="projets.html">← Tous les projets</a></p>
-        <span class="badge">IA embarquée · projet académique</span>
-        <h1>Reconnaissance d’émotions faciales sur STM32</h1>
-        <p class="docLead">Un réseau de neurones convolutif entraîné sur 28 709 visages puis embarqué sur un microcontrôleur ARM Cortex-M7.</p>
-        <dl class="meta"><div><dt>Type</dt><dd>Projet académique</dd></div><div><dt>Domaine</dt><dd>IA embarquée</dd></div><div><dt>Carte</dt><dd>STM32F746G-DISCO</dd></div><div><dt>Résultat</dt><dd>≈ 68 % d’accuracy</dd></div></dl>
-      </header>
+  <main id="main" class="container doc">
+<p class="breadcrumb"><a href="projets.html">← Projets</a></p>
+    <h1 class="pageTitle" style="text-align:left">Détection d’émotions faciales par IA embarquée</h1>
 
-      <figure class="coverFigure"><img src="figures/emotion_stm32.webp" width="1200" height="675" alt="Carte STM32F746G-DISCO affichant l’émotion reconnue et le score de confiance" decoding="async"></figure>
+    <img width="1200" height="675" src="figures/emotion_stm32.webp" alt="STM32 IA Emotion" class="heroFigure" loading="lazy">
 
-      <section aria-labelledby="ctx">
-        <h2 id="ctx">Contexte et objectif</h2>
-        <p>Concevoir et déployer un système d’intelligence artificielle embarquée capable de reconnaître des émotions faciales à partir d’images, en respectant les contraintes de calcul et de mémoire d’un microcontrôleur STM32. Applications visées : interaction homme–machine et systèmes intelligents.</p>
-      </section>
+    <section>
+      <h2>Objectif</h2>
+      <p>Concevoir et déployer un système d’intelligence artificielle embarquée capable de reconnaître des émotions faciales à partir d’images, en respectant les contraintes de calcul et de mémoire d’un microcontrôleur STM32.</p>
+      <p>Le projet vise des applications en interaction homme–machine, systèmes intelligents et IA embarquée.</p>
+    </section>
 
-      <section aria-labelledby="arch">
-        <h2 id="arch">Architecture de la chaîne</h2>
-        <ol class="pipeline" aria-label="Chaîne du dataset au microcontrôleur"><li><strong>Dataset FER</strong><span>48×48 px, niveaux de gris, 7 émotions</span></li><li><strong>Entraînement CNN</strong><span>Python, TensorFlow/Keras</span></li><li><strong>Conversion</strong><span>STM32CubeMX + X-CUBE-AI</span></li><li><strong>Inférence</strong><span>STM32F746G-DISCO</span></li><li><strong>Affichage</strong><span>UART (PuTTY) puis écran LCD</span></li></ol>
-      </section>
+    <section>
+      <h2>Dataset utilisé</h2>
+      <ul>
+        <li><strong>FER (Facial Expression Recognition)</strong></li>
+        <li>Images en niveaux de gris – 48×48 px</li>
+        <li>7 classes d’émotions : angry, disgusted, fearful, happy, neutral, sad, surprised</li>
+        <li>28 709 images pour l’entraînement</li>
+        <li>7 178 images pour le test</li>
+      </ul>
+    </section>
 
-      <section aria-labelledby="data">
-        <h2 id="data">Données</h2>
-        <ul>
-          <li>Dataset <strong>FER</strong> (Facial Expression Recognition), images 48×48 en niveaux de gris.</li>
-          <li>7 classes : colère, dégoût, peur, joie, neutre, tristesse, surprise.</li>
-          <li>28 709 images d’entraînement et 7 178 images de test.</li>
-        </ul>
-      </section>
+    <section>
+      <h2>Étapes réalisées</h2>
+      <ul>
+        <li>Prétraitement des images (normalisation, redimensionnement)</li>
+        <li>Entraînement d’un CNN avec TensorFlow/Keras</li>
+        <li>Évaluation du modèle (accuracy, matrice de confusion)</li>
+        <li>Conversion des images de test en tableaux C</li>
+        <li>Intégration avec STM32Cube.AI</li>
+        <li>Déploiement sur STM32F746G-DISCO</li>
+        <li>Tests d’inférence avec images statiques</li>
+        <li>Affichage des résultats via UART (PuTTY), puis sur écran LCD</li>
+      </ul>
+    </section>
 
-      <section aria-labelledby="steps">
-        <h2 id="steps">Réalisation</h2>
-        <ul>
-          <li>Prétraitement des images (normalisation, redimensionnement).</li>
-          <li>Entraînement d’un CNN avec TensorFlow/Keras et évaluation (accuracy, matrice de confusion).</li>
-          <li>Conversion des images de test en tableaux C et intégration avec STM32Cube.AI.</li>
-          <li>Déploiement sur STM32F746G-DISCO et tests d’inférence sur images statiques.</li>
-          <li>Affichage des résultats via UART, puis sur l’écran LCD de la carte.</li>
-        </ul>
-      </section>
+    <section>
+      <h2>Technologies & outils</h2>
+      <ul>
+        <li>Python, TensorFlow/Keras, OpenCV</li>
+        <li>STM32CubeMX, STM32CubeIDE, X-CUBE-AI</li>
+        <li>STM32F746G-DISCO</li>
+        <li>UART (PuTTY), écran LCD embarqué</li>
+      </ul>
+    </section>
 
-      <section aria-labelledby="stack">
-        <h2 id="stack">Stack technique</h2>
-        <div class="table-wrap"><table class="stack"><tbody><tr><th scope="row">Modèle</th><td>Python, TensorFlow/Keras, OpenCV</td></tr><tr><th scope="row">Embarqué</th><td>STM32CubeMX, STM32CubeIDE, X-CUBE-AI</td></tr><tr><th scope="row">Matériel</th><td>STM32F746G-DISCO, écran LCD</td></tr><tr><th scope="row">Communication</th><td>UART (PuTTY)</td></tr></tbody></table></div>
-      </section>
+    <section>
+      <h2>Résultats obtenus</h2>
+      <ul>
+        <li>Accuracy globale : ~68 % sur l’ensemble de test</li>
+        <li>Inférence correcte sur microcontrôleur malgré ressources limitées</li>
+        <li>Prédiction fiable des émotions dominantes</li>
+        <li>Affichage fonctionnel sur UART et écran LCD</li>
+        <li>Validation complète du pipeline IA → embarqué</li>
+      </ul>
 
-      <section aria-labelledby="res">
-        <h2 id="res">Résultats</h2>
-        <ul>
-          <li>Accuracy globale d’environ <strong>68&nbsp;%</strong> sur l’ensemble de test.</li>
-          <li>Inférence fonctionnelle sur microcontrôleur malgré des ressources limitées.</li>
-          <li>Chaîne complète validée, de l’entraînement à l’affichage embarqué.</li>
-        </ul>
-        <div class="figGrid">
-          <figure><img src="figures/emotion_result.webp" width="420" height="511" alt="Exemple de prédiction d’émotion dans Google Colab" loading="lazy" decoding="async"><figcaption>Exemple de prédiction (Google Colab)</figcaption></figure>
-          <figure><img src="figures/confusion_matrix.webp" width="686" height="559" alt="Matrice de confusion du modèle sur l’ensemble de test" loading="lazy" decoding="async"><figcaption>Matrice de confusion — ensemble de test</figcaption></figure>
-        </div>
-      </section>
-      <footer class="docFoot">
-        <a class="btnGhost" href="projets.html">← Retour aux projets</a>
-        <span class="ctaRow" style="margin:0"><a class="btn" href="docs/rapport_emotion_IA_STM32.pdf" download>Rapport du projet (PDF)</a></span>
-      </footer>
-    </article>
+      <h3>Exemple de prédiction (Google Colab)</h3>
+      <img width="420" height="511" src="figures/emotion_result.webp" alt="Résultat prédiction IA" loading="lazy">
+
+      <h3>Matrice de confusion – Ensemble de test</h3>
+      <img width="686" height="559" src="figures/confusion_matrix.webp" alt="Matrice de confusion IA" loading="lazy">
+    </section>
+
+    <section>
+      <h2>Télécharger le rapport du projet</h2>
+      <a href="docs/rapport_emotion_IA_STM32.pdf" download class="btn">
+        Télécharger le PDF
+      </a>
+    </section>
+
+    <p><a href="projets.html" class="btnGhost">← Retour aux projets</a></p>
   </main>
   <footer class="siteFooter">
     <div class="inner">
-      <span><span class="footBrand">Aya Souki</span> · Ingénieure en génie électrique — Électronique embarquée &amp; télécommunications · © 2026</span>
+      <span><span class="footBrand">Aya Souki</span> · Ingénieure en Électronique Embarquée &amp; Télécommunications · © 2026</span>
       <nav aria-label="Liens de contact">
         <a href="mailto:aya.souki700@gmail.com">Email</a>
         <a href="https://www.linkedin.com/in/aya-souki-022b32219/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
