@@ -3,87 +3,97 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Étude de l’architecture IMS (SIP, Diameter, VoLTE, QoS, facturation) dans les réseaux télécoms 4G/5G.">
+  <title>Réseaux IMS — Aya Souki</title>
+  <meta name="description" content="Étude de l’architecture IMS (IP Multimedia Subsystem) : signalisation SIP et Diameter, appels VoLTE, QoS et facturation dans les réseaux 4G/5G.">
+  <meta name="author" content="Aya Souki">
   <link rel="canonical" href="https://ayasoukii.github.io/portfolio/ims.html">
-  <meta name="theme-color" content="#4338ca">
-  <title>Projet IMS – Aya Souki</title>
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Aya Souki — Portfolio">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Réseaux IMS — Aya Souki">
+  <meta property="og:description" content="Étude de l’architecture IMS (IP Multimedia Subsystem) : signalisation SIP et Diameter, appels VoLTE, QoS et facturation dans les réseaux 4G/5G.">
+  <meta property="og:url" content="https://ayasoukii.github.io/portfolio/ims.html">
+  <meta property="og:image" content="https://ayasoukii.github.io/portfolio/figures/photo_aya_og.jpg">
+  <meta property="og:image:alt" content="Portrait d’Aya Souki">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b1120" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <a class="skip-link" href="#main">Aller au contenu</a>
-  <nav class="navbar" aria-label="Navigation principale">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">Aya Souki</a>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <header class="navbar">
+    <nav class="nav-container" aria-label="Navigation principale">
+      <a href="index.html" class="nav-logo"><span class="mark" aria-hidden="true">AS</span>Aya Souki</a>
       <div class="nav-links">
         <a href="index.html">Accueil</a>
         <a href="projets.html" aria-current="page">Projets</a>
-        <a href="stages.html">Stages</a>
+        <a href="stages.html">Expérience</a>
         <a href="competences.html">Compétences</a>
         <a href="certifications.html">Certifications</a>
         <a href="contact.html">Contact</a>
+        <a class="navCta" href="Aya_Souki_CV.pdf" download>CV (PDF)</a>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <main id="main" class="container doc">
-<p class="breadcrumb"><a href="projets.html">← Projets</a></p>
-    <h1 class="pageTitle" style="text-align:left">Projet IMS – Réseaux télécoms nouvelle génération</h1>
+  <main id="main">
+    <article class="doc">
+      <header class="docHeader">
+        <p class="breadcrumb"><a href="projets.html">← Tous les projets</a></p>
+        <span class="badge">Télécommunications · projet académique</span>
+        <h1>IMS — réseaux télécoms nouvelle génération</h1>
+        <p class="docLead">Une étude de l’architecture qui porte la voix et la vidéo sur les réseaux 4G et 5G.</p>
+        <dl class="meta"><div><dt>Type</dt><dd>Projet académique</dd></div><div><dt>Domaine</dt><dd>Télécommunications</dd></div><div><dt>Standards</dt><dd>3GPP</dd></div><div><dt>Livrable</dt><dd>Présentation (PDF)</dd></div></dl>
+      </header>
 
-    <img width="891" height="564" src="figures/ims_networks.webp" alt="Architecture IMS" class="heroFigure" loading="lazy">
+      <figure class="coverFigure"><img src="figures/ims_networks.webp" width="891" height="564" alt="Schéma de l’architecture d’un réseau IMS" decoding="async"></figure>
 
-    <section>
-      <h2>Objectif du projet</h2>
-      <p>
-        Étudier et comprendre l’architecture IMS (<strong>IP Multimedia Subsystem</strong>), qui constitue le cœur des réseaux télécoms 4G/5G pour les services multimédias (voix, vidéo, messagerie).
-      </p>
-    </section>
+      <section aria-labelledby="ctx">
+        <h2 id="ctx">Objectif</h2>
+        <p>Étudier l’architecture IMS (IP Multimedia Subsystem), cœur des réseaux 4G/5G pour les services multimédias : voix, vidéo et messagerie.</p>
+      </section>
 
-    <section>
-      <h2>Éléments analysés</h2>
-      <ul>
-        <li>Fonctionnement des protocoles de signalisation <strong>SIP</strong> et <strong>Diameter</strong></li>
-        <li>Architecture logique : CSCF, HSS, AS, P-CSCF, etc.</li>
-        <li>Appels VoLTE et processus d’établissement de session</li>
-        <li>Gestion de la <strong>QoS</strong> (Quality of Service) dans un réseau IMS</li>
-        <li>Mécanismes de facturation (Policy & Charging Control)</li>
-      </ul>
-    </section>
+      <section aria-labelledby="arch">
+        <h2 id="arch">Établissement d’une session</h2>
+        <ol class="pipeline" aria-label="Composants traversés par une session IMS"><li><strong>Terminal</strong><span>Client SIP / VoLTE</span></li><li><strong>P-CSCF</strong><span>Point d’entrée du réseau IMS</span></li><li><strong>I-CSCF</strong><span>Routage vers le bon S-CSCF</span></li><li><strong>S-CSCF</strong><span>Contrôle de session, profil HSS (Diameter)</span></li><li><strong>Serveur d’application</strong><span>Services, QoS et facturation</span></li></ol>
+      </section>
 
-    <section>
-      <h2>Méthodologie</h2>
-      <ul>
-        <li>Analyse documentaire à partir de standards 3GPP</li>
-        <li>Étude de cas réels : VoLTE, appels IMS, interconnexion IMS–IP</li>
-        <li>Représentation schématique des composants IMS</li>
-      </ul>
-    </section>
+      <section aria-labelledby="scope">
+        <h2 id="scope">Éléments analysés</h2>
+        <ul>
+          <li>Protocoles de signalisation SIP et Diameter.</li>
+          <li>Architecture logique : P-CSCF, I-CSCF, S-CSCF, HSS, serveurs d’application.</li>
+          <li>Appels VoLTE et établissement de session.</li>
+          <li>Gestion de la qualité de service (QoS).</li>
+          <li>Mécanismes de facturation (Policy &amp; Charging Control).</li>
+        </ul>
+        <h3>Méthodologie</h3>
+        <ul>
+          <li>Analyse documentaire à partir des standards 3GPP.</li>
+          <li>Étude de cas réels : VoLTE, appels IMS, interconnexion IMS–IP.</li>
+          <li>Représentation schématique des composants IMS.</li>
+        </ul>
+      </section>
 
-    <section>
-      <h2>Technologies & concepts</h2>
-      <ul>
-        <li>VoIP (Voice over IP), SIP, Diameter</li>
-        <li>4G / LTE – VoLTE</li>
-        <li>Quality of Service (QoS)</li>
-        <li>IMS Core : P-CSCF, I-CSCF, S-CSCF</li>
-        <li>Charging, Policy Control, 3GPP</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Télécharger la présentation du projet</h2>
-      <a href="docs/NGN_presentation.pdf" download class="btn">
-        Télécharger le PDF
-      </a>
-    </section>
-
-    <p><a href="projets.html" class="btnGhost">← Retour aux projets</a></p>
+      <section aria-labelledby="stack">
+        <h2 id="stack">Technologies et concepts</h2>
+        <div class="table-wrap"><table class="stack"><tbody><tr><th scope="row">Signalisation</th><td>SIP, Diameter</td></tr><tr><th scope="row">Réseau</th><td>4G / LTE, VoLTE, VoIP</td></tr><tr><th scope="row">Cœur IMS</th><td>P-CSCF, I-CSCF, S-CSCF, HSS</td></tr><tr><th scope="row">Services</th><td>QoS, Policy &amp; Charging Control, 3GPP</td></tr></tbody></table></div>
+      </section>
+      <footer class="docFoot">
+        <a class="btnGhost" href="projets.html">← Retour aux projets</a>
+        <span class="ctaRow" style="margin:0"><a class="btn" href="docs/NGN_presentation.pdf" download>Présentation du projet (PDF)</a></span>
+      </footer>
+    </article>
   </main>
   <footer class="siteFooter">
     <div class="inner">
-      <span><span class="footBrand">Aya Souki</span> · Ingénieure en Électronique Embarquée &amp; Télécommunications · © 2026</span>
+      <span><span class="footBrand">Aya Souki</span> · Ingénieure en génie électrique — Électronique embarquée &amp; télécommunications · © 2026</span>
       <nav aria-label="Liens de contact">
         <a href="mailto:aya.souki700@gmail.com">Email</a>
         <a href="https://www.linkedin.com/in/aya-souki-022b32219/" target="_blank" rel="noopener noreferrer">LinkedIn</a>

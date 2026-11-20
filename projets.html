@@ -4,152 +4,174 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projets — Aya Souki</title>
-  <meta name="description" content="Projets d’Aya Souki : digitalisation du contrôle qualité à réception (LEONI), IA embarquée sur STM32, pipeline CI/CD, IoT, Deep Learning et vision par ordinateur.">
+  <meta name="description" content="Projets d’Aya Souki classés par domaine : digitalisation industrielle (LEONI), IA et vision par ordinateur, systèmes embarqués et IoT, DevOps et télécommunications.">
+  <meta name="author" content="Aya Souki">
   <link rel="canonical" href="https://ayasoukii.github.io/portfolio/projets.html">
-  <meta property="og:title" content="Projets — Aya Souki">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Aya Souki — Portfolio">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Projets — Aya Souki">
+  <meta property="og:description" content="Projets d’Aya Souki classés par domaine : digitalisation industrielle (LEONI), IA et vision par ordinateur, systèmes embarqués et IoT, DevOps et télécommunications.">
   <meta property="og:url" content="https://ayasoukii.github.io/portfolio/projets.html">
-  <meta name="theme-color" content="#4338ca">
+  <meta property="og:image" content="https://ayasoukii.github.io/portfolio/figures/photo_aya_og.jpg">
+  <meta property="og:image:alt" content="Portrait d’Aya Souki">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b1120" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Aller au contenu</a>
-
-  <nav class="navbar" aria-label="Navigation principale">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">Aya Souki</a>
+  <header class="navbar">
+    <nav class="nav-container" aria-label="Navigation principale">
+      <a href="index.html" class="nav-logo"><span class="mark" aria-hidden="true">AS</span>Aya Souki</a>
       <div class="nav-links">
         <a href="index.html">Accueil</a>
         <a href="projets.html" aria-current="page">Projets</a>
-        <a href="stages.html">Stages</a>
+        <a href="stages.html">Expérience</a>
         <a href="competences.html">Compétences</a>
         <a href="certifications.html">Certifications</a>
         <a href="contact.html">Contact</a>
+        <a class="navCta" href="Aya_Souki_CV.pdf" download>CV (PDF)</a>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
   <main id="main" class="container">
-    <h1 class="pageTitle">Projets</h1>
-    <p class="pageLead">Du capteur à l’application web : systèmes embarqués, IoT, IA, développement web et DevOps.</p>
-
-    <div class="filters" role="group" aria-label="Filtrer les projets">
-      <button type="button" data-filter="all" aria-pressed="true">Tous</button>
-      <button type="button" data-filter="web" aria-pressed="false">Web</button>
-      <button type="button" data-filter="ia" aria-pressed="false">IA & Vision</button>
-      <button type="button" data-filter="embarque" aria-pressed="false">Embarqué & IoT</button>
-      <button type="button" data-filter="devops" aria-pressed="false">DevOps</button>
-      <button type="button" data-filter="telecom" aria-pressed="false">Télécoms</button>
-    </div>
-
-    <div class="grid" id="projects">
-      <article class="card featuredCard" data-cat="web ia devops">
-        <span class="badge">Projet phare · LEONI Wiring Systems Tunisia</span>
-        <h2 class="cardTitle" style="font-family:Poppins,sans-serif;font-size:20px;margin:4px 0 6px">Digitalisation du processus d’inspection à réception (IQC)</h2>
-        <p>
-          Application web de contrôle qualité à réception pour le service Qualité / Incoming Quality Control :
-          informations de réception et références articles, échantillonnage, contrôles dimensionnels et rapports d’inspection.
-          Une aide à l’inspection visuelle propose un verdict que l’inspecteur valide.
-        </p>
-        <ul class="cardTags" aria-label="Technologies">
-          <li>Python</li><li>Django REST Framework</li><li>PostgreSQL</li><li>Angular 17</li><li>TypeScript</li><li>RxJS</li><li>Celery / Redis</li><li>Docker</li><li>Nginx</li>
-        </ul>
-        <a class="btn" href="iqc.html">Voir la fiche projet</a>
-      </article>
-
-      <article class="card" data-cat="ia embarque">
-        <img width="1200" height="675" loading="lazy" src="figures/emotion_stm32.webp" alt="Carte STM32F746G-DISCO affichant une reconnaissance d’émotion">
-        <h3>Reconnaissance d’émotions faciales embarquée</h3>
-        <p>CNN entraîné sur le dataset FER et déployé sur STM32 avec STM32Cube.AI. Résultats via UART et écran LCD.</p>
-        <ul class="cardTags"><li>TensorFlow/Keras</li><li>STM32Cube.AI</li><li>C</li></ul>
-        <a class="btn" href="emotion-ia.html">Voir plus</a>
-      </article>
-
-      <article class="card" data-cat="devops web">
-        <img width="1200" height="515" loading="lazy" src="figures/devops_pipeline.webp" alt="Schéma du pipeline CI/CD Jenkins et Docker">
-        <h3>Pipeline DevOps — Jenkins, Docker & MySQL</h3>
-        <p>Pipeline CI/CD d’une application Java Spring MVC : build Maven, image Docker, déploiement avec Docker Compose.</p>
-        <ul class="cardTags"><li>Jenkins</li><li>Docker</li><li>MySQL</li><li>Linux</li></ul>
-        <a class="btn" href="devops.html">Voir plus</a>
-      </article>
-
-      <article class="card" data-cat="ia">
-        <img width="456" height="292" loading="lazy" src="figures/plantes.webp" alt="Feuilles de plantes utilisées pour la détection de maladies">
-        <h3>Détection des maladies des plantes (Deep Learning)</h3>
-        <p>Classification d’images d’arbres fruitiers avec TensorFlow/Keras, augmentation de données, dataset Kaggle.</p>
-        <ul class="cardTags"><li>TensorFlow/Keras</li><li>Computer Vision</li></ul>
-        <a class="btn" href="maladies-plantes.html">Voir plus</a>
-      </article>
-
-      <article class="card" data-cat="ia embarque">
-        <img width="857" height="877" loading="lazy" src="figures/panneaux_cercles_dominant_color.webp" alt="Détection de panneaux routiers circulaires">
-        <h3>Détection de panneaux routiers embarquée</h3>
-        <p>Raspberry Pi avec caméra et OpenCV ; modèle de Deep Learning entraîné sur un dataset public.</p>
-        <ul class="cardTags"><li>Raspberry Pi</li><li>OpenCV</li><li>Deep Learning</li></ul>
-      </article>
-
-      <article class="card" data-cat="embarque">
-        <img width="1200" height="582" loading="lazy" src="figures/Aeroqium.webp" alt="Serre connectée AEROQIUM">
-        <h3>AEROQIUM — Serre connectée aéroponique</h3>
-        <p>Serre avec aquarium, arrosage automatisé, capteurs (pH, EC, température). Application Flutter, stockage Firebase.</p>
-        <ul class="cardTags"><li>ESP32</li><li>Flutter</li><li>Firebase</li></ul>
-      </article>
-
-      <article class="card" data-cat="embarque web">
-        <img width="1200" height="780" loading="lazy" src="figures/RFID.webp" alt="Badge RFID et module de lecture">
-        <h3>Gestion d’inventaire RFID</h3>
-        <p>Suivi d’objets par badges RFID et ESP32, base de données en ligne et affichage des mouvements via Node.js.</p>
-        <ul class="cardTags"><li>ESP32</li><li>RFID</li><li>Node.js</li></ul>
-      </article>
-
-      <article class="card" data-cat="embarque ia">
-        <img width="720" height="877" loading="lazy" src="figures/Scanner3D.webp" alt="Scanner 3D tournant">
-        <h3>Scanner 3D</h3>
-        <p>Scanner tournant avec capteurs et caméra pour la reconstruction 3D (Arduino, OpenCV).</p>
-        <ul class="cardTags"><li>Arduino</li><li>OpenCV</li></ul>
-      </article>
-
-      <article class="card" data-cat="embarque web">
-        <h3>Domotique basée sur Node.js</h3>
-        <p>Maison intelligente : tableau de bord, MQTT, Node-RED et MongoDB pour la lumière, la température et la sécurité.</p>
-        <ul class="cardTags"><li>MQTT</li><li>Node-RED</li><li>MongoDB</li></ul>
-      </article>
-
-      <article class="card" data-cat="telecom">
-        <img width="891" height="564" loading="lazy" src="figures/ims_networks.webp" alt="Architecture du réseau IMS">
-        <h3>Projet IMS — Réseaux télécoms nouvelle génération</h3>
-        <p>Analyse de l’architecture IMS : protocoles SIP/Diameter, appels VoLTE, QoS et facturation.</p>
-        <ul class="cardTags"><li>IMS</li><li>SIP</li><li>Diameter</li></ul>
-        <a class="btn" href="ims.html">Voir plus</a>
-      </article>
-    </div>
-
-    <p class="subFooter"><a href="index.html" class="btnGhost">← Retour à l’accueil</a></p>
+    <header class="pageHeader">
+      <span class="eyebrow">Projets</span>
+      <h1 class="pageTitle">Projets par domaine</h1>
+      <p class="pageLead">Dix projets, de l’usine au microcontrôleur : digitalisation industrielle, IA et vision, embarqué et IoT, DevOps et télécoms. Les études de cas détaillent l’architecture, la stack et les résultats.</p>
+      <nav class="domainNav" aria-label="Domaines"><a href="#industrie">Digitalisation industrielle &amp; full-stack</a><a href="#ia">IA &amp; vision par ordinateur</a><a href="#iot">Systèmes embarqués &amp; IoT</a><a href="#devops">DevOps</a><a href="#telecom">Télécommunications</a></nav>
+    </header>
+      <section class="domain" id="industrie" aria-labelledby="industrie-title">
+        <div class="domainHead"><h2 id="industrie-title">Digitalisation industrielle &amp; full-stack</h2><p>Applications web au service de la production et de la qualité.</p></div>
+        <div class="grid one">
+        <article class="card">
+          <div class="cardMedia panel"><div><span class="big">97 k€</span><span>de gain réalisé</span><span class="badge ok">Déployée en production</span></div></div>
+          <div class="cardBody">
+            <p class="cardKicker">Projet de fin d’études · LEONI</p>
+            <h3>Contrôle qualité à réception (IQC)</h3>
+            <p>Application web d’inspection guidée et assistée par l’IA, testée et déployée en production. Gain réalisé de 97 k€.</p>
+            <ul class="tags" aria-label="Technologies"><li>Angular 17</li><li>Django REST</li><li>PostgreSQL</li><li>Celery/Redis</li><li>Docker</li></ul>
+            <div class="cardFoot"><a class="textLink" href="iqc.html">Étude de cas IQC</a></div>
+          </div>
+        </article>
+        </div>
+      </section>
+      <section class="domain" id="ia" aria-labelledby="ia-title">
+        <div class="domainHead"><h2 id="ia-title">IA &amp; vision par ordinateur</h2><p>Modèles de Deep Learning, du notebook jusqu’au matériel embarqué.</p></div>
+        <div class="grid cols-2">
+        <article class="card">
+          <div class="cardMedia"><img src="figures/emotion_stm32.webp" width="1200" height="675" alt="Carte STM32F746G-DISCO affichant la reconnaissance d’une émotion" loading="lazy" decoding="async"></div>
+          <div class="cardBody">
+            <p class="cardKicker">IA embarquée</p>
+            <h3>Reconnaissance d’émotions sur STM32</h3>
+            <p>CNN entraîné sur FER (7 émotions) et déployé avec X-CUBE-AI ; résultats sur UART et écran LCD.</p>
+            <ul class="tags" aria-label="Technologies"><li>TensorFlow/Keras</li><li>X-CUBE-AI</li><li>STM32</li></ul>
+            <div class="cardFoot"><a class="textLink" href="emotion-ia.html">Étude de cas émotions</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="cardMedia"><img src="figures/plantes.webp" width="456" height="292" alt="Raspberry Pi avec écran utilisé pour le diagnostic des maladies des plantes" loading="lazy" decoding="async"></div>
+          <div class="cardBody">
+            <p class="cardKicker">Vision · PFE Licence</p>
+            <h3>Détection des maladies des plantes</h3>
+            <p>Classification d’images de feuilles et diagnostic sur Raspberry Pi avec caméra et écran.</p>
+            <ul class="tags" aria-label="Technologies"><li>TensorFlow/Keras</li><li>OpenCV</li><li>Raspberry Pi</li></ul>
+            <div class="cardFoot"><a class="textLink" href="maladies-plantes.html">Étude de cas maladies des plantes</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="cardMedia"><img src="figures/panneaux_cercles_dominant_color.webp" width="857" height="877" alt="Panneaux routiers détectés et annotés" loading="lazy" decoding="async"></div>
+          <div class="cardBody">
+            <p class="cardKicker">Vision embarquée</p>
+            <h3>Détection de panneaux routiers</h3>
+            <p>Raspberry Pi avec caméra et OpenCV ; modèle de Deep Learning entraîné sur un dataset public.</p>
+            <ul class="tags" aria-label="Technologies"><li>Raspberry Pi</li><li>OpenCV</li><li>Deep Learning</li></ul>
+          </div>
+        </article>
+        <article class="card">
+          <div class="cardMedia"><img src="figures/Scanner3D.webp" width="720" height="877" alt="Prototype de scanner 3D tournant" loading="lazy" decoding="async"></div>
+          <div class="cardBody">
+            <p class="cardKicker">Vision · prototype</p>
+            <h3>Scanner 3D</h3>
+            <p>Scanner tournant avec capteurs et caméra pour la reconstruction 3D.</p>
+            <ul class="tags" aria-label="Technologies"><li>Arduino</li><li>OpenCV</li></ul>
+          </div>
+        </article>
+        </div>
+      </section>
+      <section class="domain" id="iot" aria-labelledby="iot-title">
+        <div class="domainHead"><h2 id="iot-title">Systèmes embarqués &amp; IoT</h2><p>Capteurs, microcontrôleurs et objets connectés.</p></div>
+        <div class="grid">
+        <article class="card">
+          <div class="cardMedia"><img src="figures/Aeroqium.webp" width="1200" height="582" alt="Serre connectée aéroponique AEROQIUM" loading="lazy" decoding="async"></div>
+          <div class="cardBody">
+            <p class="cardKicker">IoT · agriculture</p>
+            <h3>AEROQIUM — serre connectée aéroponique</h3>
+            <p>Serre avec aquarium, arrosage automatisé et capteurs (pH, EC, température) ; application Flutter et stockage Firebase.</p>
+            <ul class="tags" aria-label="Technologies"><li>ESP32</li><li>Flutter</li><li>Firebase</li></ul>
+          </div>
+        </article>
+        <article class="card">
+          <div class="cardMedia"><img src="figures/RFID.webp" width="1200" height="780" alt="Badges RFID et module de lecture" loading="lazy" decoding="async"></div>
+          <div class="cardBody">
+            <p class="cardKicker">IoT · traçabilité</p>
+            <h3>Gestion d’inventaire RFID</h3>
+            <p>Suivi d’objets par badges RFID et ESP32, base de données en ligne et affichage des mouvements avec Node.js.</p>
+            <ul class="tags" aria-label="Technologies"><li>ESP32</li><li>RFID</li><li>Node.js</li></ul>
+          </div>
+        </article>
+        <article class="card">
+          <div class="cardBody">
+            <p class="cardKicker">IoT · bâtiment</p>
+            <h3>Domotique avec Node.js</h3>
+            <p>Maison intelligente : tableau de bord, MQTT, Node-RED et MongoDB pour la lumière, la température et la sécurité.</p>
+            <ul class="tags" aria-label="Technologies"><li>MQTT</li><li>Node-RED</li><li>MongoDB</li></ul>
+          </div>
+        </article>
+        </div>
+      </section>
+      <section class="domain" id="devops" aria-labelledby="devops-title">
+        <div class="domainHead"><h2 id="devops-title">DevOps</h2><p>Automatisation du build et du déploiement.</p></div>
+        <div class="grid one">
+        <article class="card">
+          <div class="cardMedia"><img src="figures/devops_pipeline.webp" width="1200" height="515" alt="Vue Jenkins des étapes du pipeline CI/CD" loading="lazy" decoding="async"></div>
+          <div class="cardBody">
+            <p class="cardKicker">CI/CD</p>
+            <h3>Pipeline Jenkins, Docker &amp; MySQL</h3>
+            <p>Build Maven, image Docker et déploiement Docker Compose d’une application Java Spring MVC.</p>
+            <ul class="tags" aria-label="Technologies"><li>Jenkins</li><li>Docker</li><li>MySQL</li><li>Linux</li></ul>
+            <div class="cardFoot"><a class="textLink" href="devops.html">Étude de cas DevOps</a></div>
+          </div>
+        </article>
+        </div>
+      </section>
+      <section class="domain" id="telecom" aria-labelledby="telecom-title">
+        <div class="domainHead"><h2 id="telecom-title">Télécommunications</h2><p>Réseaux mobiles et services multimédias.</p></div>
+        <div class="grid one">
+        <article class="card">
+          <div class="cardMedia"><img src="figures/ims_networks.webp" width="891" height="564" alt="Schéma de l’architecture d’un réseau IMS" loading="lazy" decoding="async"></div>
+          <div class="cardBody">
+            <p class="cardKicker">Réseaux</p>
+            <h3>IMS — réseaux télécoms nouvelle génération</h3>
+            <p>Étude de l’architecture IMS : signalisation SIP/Diameter, appels VoLTE, QoS et facturation.</p>
+            <ul class="tags" aria-label="Technologies"><li>IMS</li><li>SIP</li><li>Diameter</li><li>VoLTE</li></ul>
+            <div class="cardFoot"><a class="textLink" href="ims.html">Étude de cas IMS</a></div>
+          </div>
+        </article>
+        </div>
+      </section>
   </main>
-
-  <script>
-    (function () {
-      var buttons = document.querySelectorAll('.filters button');
-      var cards = document.querySelectorAll('#projects .card');
-      buttons.forEach(function (b) {
-        b.addEventListener('click', function () {
-          var f = b.getAttribute('data-filter');
-          buttons.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
-          cards.forEach(function (c) {
-            var show = f === 'all' || c.getAttribute('data-cat').split(' ').indexOf(f) !== -1;
-            c.hidden = !show;
-          });
-        });
-      });
-    })();
-  </script>
   <footer class="siteFooter">
     <div class="inner">
-      <span><span class="footBrand">Aya Souki</span> · Ingénieure en Électronique Embarquée &amp; Télécommunications · © 2026</span>
+      <span><span class="footBrand">Aya Souki</span> · Ingénieure en génie électrique — Électronique embarquée &amp; télécommunications · © 2026</span>
       <nav aria-label="Liens de contact">
         <a href="mailto:aya.souki700@gmail.com">Email</a>
         <a href="https://www.linkedin.com/in/aya-souki-022b32219/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
