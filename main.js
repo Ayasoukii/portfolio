@@ -26,8 +26,8 @@
       '<svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>' +
       '<svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
     themeBtn.addEventListener('click', function () {
-      var current = root.getAttribute('data-theme') ||
-        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      // Le thème sombre est le thème par défaut du site.
+      var current = root.getAttribute('data-theme') || 'dark';
       var next = current === 'dark' ? 'light' : 'dark';
       root.setAttribute('data-theme', next);
       store('theme', next);
@@ -131,6 +131,33 @@
       });
     }, { threshold: 0.6 });
     counters.forEach(function (el) { co.observe(el); });
+  }
+
+  /* ---------- Icônes de catégorie sur les cartes projets ---------- */
+  var catIcon = { web: '--i-web', ia: '--i-neural', embarque: '--i-chip', devops: '--i-loop', telecom: '--i-signal' };
+  document.querySelectorAll('#projects .card[data-cat]').forEach(function (card) {
+    if (!card.querySelector('img')) return;
+    var box = document.createElement('div');
+    box.className = 'catIcons';
+    box.setAttribute('aria-hidden', 'true');
+    card.getAttribute('data-cat').split(' ').forEach(function (c) {
+      if (!catIcon[c]) return;
+      var i = document.createElement('i');
+      i.style.setProperty('--ic', 'var(' + catIcon[c] + ')');
+      box.appendChild(i);
+    });
+    if (box.children.length) card.insertBefore(box, card.firstChild);
+  });
+
+  /* ---------- Halo lumineux qui suit le pointeur sur les cartes ---------- */
+  if (!reduceMotion && window.matchMedia && window.matchMedia('(hover: hover)').matches) {
+    document.querySelectorAll('.card, .skills-category, .contactCard').forEach(function (el) {
+      el.addEventListener('pointermove', function (e) {
+        var r = el.getBoundingClientRect();
+        el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+    });
   }
 
   /* ---------- Filtres de projets : petite animation ---------- */
