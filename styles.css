@@ -321,7 +321,7 @@ section.doc h2,.doc section h2,.doc > section > h2{
 @keyframes spin{to{transform:rotate(360deg)}}
 /* photo agrandie (--zoom) puis redécoupée en cercle, avec 5px d'écart avec l'anneau */
 .heroPhoto img{
-  width:100%; height:100%; object-fit:cover; object-position:center; display:block;
+  width:100%; height:100%; object-fit:cover; object-position:50% 68%; display:block;
   transform-origin:50% 40%; transform:scale(var(--zoom));
   clip-path:circle(calc((50% - 5px) / var(--zoom)) at 50% calc(40% + 10% / var(--zoom)));
 }
